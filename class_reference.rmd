@@ -20,9 +20,9 @@ knitr::opts_chunk$set(echo = TRUE)
 Consider this a personal guide to the commands and functions you will learn. In general, when you come across an R command or function that you want to remember, put it in here along with a description of what it does and when you'd use it.
 
 ## Things I learned on Jan. 27
-s
-We won't do anything in this class that doesn't contain the command library(tidyverse)
 
+We won't do anything in this class that doesn't contain the command library(tidyverse)
+The command to assign a name to a variable is number <- 2
 The command to set a working directory is setwd(). For example:
 
 ```{r}
