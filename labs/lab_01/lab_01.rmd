@@ -110,4 +110,17 @@ Store it as a variable object called `wv_summary` so that you can examine it wit
 **A7** [write your answer here]
 ```{r}
 # Write the code to produce your answer here
+`wv_summary` <- 
+  wv_ppp_loans %>%
+  summarise(
+    count_loans = n(),
+    total_loans_amount = sum(amount),
+    mean_loan_amount = mean(amount),
+    median_loan_amount = median(amount),
+    min_loan_amount = min(amount),
+    max_loan_amount = max(amount)
+  ) %>%
+  arrange(desc(max_loan_amount))
+
+`wv_summary`
 ```
