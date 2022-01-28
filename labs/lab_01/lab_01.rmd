@@ -107,7 +107,7 @@ wv_ppp_loans %>%
 
 Store it as a variable object called `wv_summary` so that you can examine it with the data viewer. What newsworthy nuggets jump out at you that you could imagine dropping into a news story? Write a few summary sentences with overall findings.
 
-**A7** [write your answer here]
+**A7** An interesting nugget that jumps out at me is that no West Virginian businesses received the maximum amount for the PPP loan. West Virginians received just over 33,000 PPP loans and the sum of these loans totaled about $2.6 billion. The median loan amount was $20,832, which is the maximum PPP loan amount for self employed Americans. The minimum loan amount was also $165. Many PPP applicants received loan payments of less than $1,000, and many of them are listed as indepdendent contractors, so I wonder how/why they were afforded such little money. 
 ```{r}
 # Write the code to produce your answer here
 `wv_summary` <- 
