@@ -124,6 +124,7 @@ mutate(
   jobs_retained_category = case_when(
     jobs_retained < 10 ~ 'under_10',
     jobs_retained >= 10 & jobs_retained < 25 ~ '10_to_25',
+    jobs_retained >= 25 & jobs_retained < 50 ~ '25_to_50',
     jobs_retained >= 50 & jobs_retained < 100 ~ '50_to_100',
     jobs_retained >= 100 & jobs_retained < 250 ~ '100_to_250',
     jobs_retained >= 250 & jobs_retained < 500 ~ '250_to_500',
