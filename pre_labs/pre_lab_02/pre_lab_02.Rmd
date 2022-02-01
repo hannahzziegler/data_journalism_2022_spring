@@ -77,6 +77,7 @@ maryland_ppp %>%
 ```
 What is the payroll proceeds percentage for the first result? Put your answer in the space below.
 **Answer**
+100% 
 
 
 ### Task 7: Mutate with ordering, part 2
@@ -92,12 +93,14 @@ maryland_ppp %>%
 ```
 What is the payroll proceeds percentage for the first result? Put your answer in the space below.
 **Answer**
+0%
 
 
 ### Task 8: Create a new column using if/else
 One question you might have is whether the lenders servicing these loan applications are located in Maryland or outside. We can add a column using mutate and populate it based on the state of the lender.
 
 **Task** Run the following code to create a new column called `in_out` based on the values of `servicing_lender_state`. Add a description of what this code does to your reference notebook.
+
 
 ```{r}
 # if/else example
