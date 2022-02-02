@@ -157,7 +157,7 @@ and_prince_georges <- maryland_ppp %>% filter(project_county_name == "PRINCE GEO
 nrow(and_prince_georges)
 ```
 What is the number of applications that meet that criteria? Put your answer in the space below.
-**Answer**
+**Answer** 146
 
 ### Task 12: Multiple filters - OR
 **Task** Run the following code to limit our data to Prince George's County loan applications OR applications from nonprofit organizations OR where the amount is larger than $150,000.
@@ -168,7 +168,7 @@ or_prince_georges <- maryland_ppp %>% filter(project_county_name == "PRINCE GEOR
 nrow(or_prince_georges)
 ```
 What is the number of applications that meet that criteria? Put your answer in the space below.
-**Answer**
+**Answer** 527724
 
 
 ## Dates
@@ -184,7 +184,7 @@ maryland_ppp_sample <- read.csv('data/ppp_maryland.csv')
 glimpse(maryland_ppp_sample)
 ```
 What is the datatype for `date_approved` (it's just to the right of the column name)? Put your answer in the space below.
-**Answer**
+**Answer** <chr>
 
 ### Task 14: Load data using lubridate
 **Task** Run the following code to load the application data, then use glimpse() to see the data type for `date_approved`.
@@ -197,7 +197,9 @@ glimpse(lubridate_maryland_ppp)
 ```
 What is the datatype for `date_approved` (it's just to the right of the column name)? What is the datatype for `CleanDate`?
 Put your answers in the space below.
-**Answer**
+**Answer** 
+`date_approved` = <chr>
+`CleanDate` = <dttm>
 
 
 ### Task 15: Load data using read_csv
@@ -208,7 +210,7 @@ maryland_ppp_sample <- read_csv('data/ppp_maryland.csv')
 glimpse(maryland_ppp_sample)
 ```
 What is the datatype for `date_approved` (it's just to the right of the column name)? Put your answer in the space below.
-**Answer**
+**Answer** <date>
 
 ### Task 16: Use mutate and lubridate to add a column called `Month` and see which month had the most applications.
 **Task** Run the following code to create a new column based on `date_approved`. Add a description of what this code does to your reference notebook.
@@ -221,4 +223,4 @@ maryland_ppp %>%
   arrange(desc(total))
 ```
 What month saw the most applications and how many? Put your answer in the space below.
-**Answer**
+**Answer** April 2020
