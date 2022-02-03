@@ -71,8 +71,8 @@ mutate(
 
 ```{r}
 # Write the code to produce your answer here
-west_virginia_ppp %>% group_by(lender)
-
+west_virginia_ppp %>% filter(lender)
+group_by(undispersed_amount)
   
 ```
 
