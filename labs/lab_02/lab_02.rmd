@@ -77,7 +77,7 @@ west_virginia_ppp %>% filter(undisbursed_amount > "0") %>% select(undisbursed_am
 ```
 
 **Q3** What are some potential reasons why a loan might not be paid out? What questions does that circumstance raise for you?
-**A3** A loan may not be paid out if the company requesting the loan canceled it at some point during the distribution process, similar to what we saw in the article from the Charlotte News and Observer. A loan also may not be paid out ____. I want to know why Davis Trust Company did not pay out loans, especially in such large sums. I also want to know if there's an SBA policy for when a bank cannot pay out a loan or if there are circumstances in which banks were not able to provide loan payments. 
+**A3** A loan may not be paid out if the company requesting the loan canceled it at some point during the distribution process, similar to what we saw in the article from the Charlotte News and Observer. A loan also may not be paid out is if the company the loan was supposed to go to closed or did not meet certain criteria of the loan. The bank could have also decided that the business was untrustworthy based on previous interactions. I want to know why Davis Trust Company did not pay out loans, especially in such large sums. I also want to know if there's an SBA policy for when a bank cannot pay out a loan or if there are circumstances in which banks were not able to provide loan payments. 
 
 
 **Q4** Which month in 2021 had the most loans approved?
