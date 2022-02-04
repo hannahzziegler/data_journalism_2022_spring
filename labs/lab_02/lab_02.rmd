@@ -67,7 +67,7 @@ mutate(
 ```
 
 **Q2** Some of the loans appear not to have been paid out - there is a column representing the amount of money that hasn't been disbursed to the applicant. Which servicing lenders have the most loans with undisbursed amounts greater than 0?
-**A2** Davis Trust Company has the most loans with undispersed amount greater than 0.
+**A2** Davis Trust Company and Miners & Merchants Bank have the most loans with undispursed amount greater than 0, but Davis Trust Company accounts for the greatest sum of undispursed loans. 
 
 ```{r}
 # Write the code to produce your answer here
