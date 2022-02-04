@@ -71,9 +71,7 @@ mutate(
 
 ```{r}
 # Write the code to produce your answer here
-west_virginia_ppp %>% filter(lender)
-group_by(undispersed_amount)
-  
+west_virginia_ppp %>% select(undisbursed_amount, lender) 
 ```
 
 **Q3** What are some potential reasons why a loan might not be paid out? What questions does that circumstance raise for you?
