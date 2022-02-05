@@ -48,7 +48,7 @@ west_virginia_ppp <- read_rds("data/lab_02.rds")
 
 **Q1** Create a new column that divides the loan amounts into the following options - under_10k, 10k_50k, 50k_100k, 100k_500k, 500k_1m, 1m_plus - and calculates how many loans are in each group. How would you describe the distribution of loans in a sentence?
 Hint: You will need to use `case_when` to make this work.
-**A1** I would say that the loans are mainly distributed in the below $10,000, with a decent variety in the $10-50,000 range.
+**A1** I would say that the majority of loans are distributed between 0-50k, with more loans in the 10-50k range than in the under 10k range. 
 
 ```{r}
 # Write the code to produce your answer here
