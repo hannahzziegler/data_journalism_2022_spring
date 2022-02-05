@@ -64,6 +64,13 @@ mutate(
     amount > 1000000 ~ '1m_plus'
     )
 )
+loan_amounts_categories %>%
+  group_by(loan_amounts_categories) %>%
+   summarise(
+     loan
+   )
+
+  
 ```
 
 **Q2** Some of the loans appear not to have been paid out - there is a column representing the amount of money that hasn't been disbursed to the applicant. Which servicing lenders have the most loans with undisbursed amounts greater than 0?
@@ -86,11 +93,14 @@ west_virginia_ppp %>% filter(undisbursed_amount > "0") %>% select(undisbursed_am
 
 ```{r}
 # Write the code to produce your answer here
+library(dplyr)
 west_virginia_ppp %>%
   mutate(Month = floor_date(date_approved, "month")) %>%
   group_by(Month) %>%
   summarise(total = n()) %>%
-  arrange(desc(total))
+  arrange(desc(total)) %>%
+  
+  filter(Month >= "2020-12-31")
 ```
 
 **Q5** How many loans went to West Virginia applicants that listed the maximum number of jobs retained (500)? Which one had the earliest approved date?
