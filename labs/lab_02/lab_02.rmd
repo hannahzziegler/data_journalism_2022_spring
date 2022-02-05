@@ -66,10 +66,9 @@ mutate(
 )
 loan_amounts_categories %>%
   group_by(loan_amounts_categories) %>%
-   summarise(
-     loan
-   )
-
+  summarise(
+     count_loans = n()
+  )
   
 ```
 
