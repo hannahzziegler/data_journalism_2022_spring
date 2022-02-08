@@ -223,7 +223,7 @@ And let's examine the full data set.
 
 ### Task 5: Examine the data table
 **Task** Run the following codeblock to examine the data. Name three problems the book chapter says exist in this data set that could prevent us from answering questions?  Answer below
-**Answer** 
+**Answer** Three problems that exist in this data that could prevent us from answering questions are the amount category being the wrong type of data, a row being fully duplicated, and the city field having five different forms, including misspellings, or Arnold. 
 
 ```{r}
 arnold_md_loans
