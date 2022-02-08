@@ -119,7 +119,7 @@ ppp_maryland_loans %>%
 
 ### Task 10: Examine forgiveness_date and forgiveness_amount together
 **Task** Run the following codeblock to group by forgiveness_date and forgiveness_amount, count the number of loans, then sort from highest to lowest on count and filter to only show NA values. How many loans are there where forgiveness_date and forgiveness_amount is NA? Is it the same as the number for forgiveness_amount and forgiveness_amount run separately in the codeblocks above? What can you conclude from Answer below.
-**Answer**:
+**Answer**: This value is the same as the number for forgiveness_amount and forgiveness_date that was run separately in the previous codeblocks. 
 
 ```{r}
 ppp_maryland_loans %>%
