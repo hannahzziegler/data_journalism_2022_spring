@@ -45,7 +45,7 @@ ppp_maryland_loans <- read_csv("ppp_loans_md.csv.zip", guess_max=10)
 
 ### Task 3: Check for problems on load
 **Task** Check for problems that occurred when loading the ppp loan data for Maryland by running the following code.  How many problems were there, as shown by the number of rows in the output table showing errors? Answer below.
-**Answer**
+**Answer** There are 87,927 problems. 
 
 ```{r}
 
@@ -55,7 +55,7 @@ problems(ppp_maryland_loans)
 
 ### Task 4: Reload data
 **Task** Run the following codeblock to reload the data, using every row to set the data types. Does it show any parsing errors when you run? Answer below
-**Answer**
+**Answer** There were not any parsing errors when I ran this codeblock with every row. 
 
 ```{r}
 ppp_maryland_loans <- read_csv("ppp_loans_md.csv.zip", guess_max=195865)
@@ -63,7 +63,7 @@ ppp_maryland_loans <- read_csv("ppp_loans_md.csv.zip", guess_max=195865)
 
 ### Task 5: Examine the data with glimpse
 **Task** Run the following codeblock to glimpse the data.  What data type is the "amount" field?  What data type is the "name" field? What data type is the id column? Answer below.
-**Answer**
+**Answer** The amount field is a <dbl> data type. The name field is a <chr> data type. The id column is a <dbl> data type. 
 ```{r}
 glimpse(ppp_maryland_loans)
 ```
@@ -79,7 +79,7 @@ glimpse(ppp_maryland_loans)
 
 ### Task 7: Examine the franchise column for missing values.
 **Task** Run the following codeblock to group by franchise_name, count the number of loans, then sort from highest to lowest on count. How many loans are there where franchise_name is NA? How many loans are there where the franchise_name is "Subway"? Answer below.
-**Answer**:
+**Answer**: There are 192959 loans where the franchise_name is NA. Subway has 275 loans. 
 
 ```{r}
 
@@ -92,7 +92,7 @@ ppp_maryland_loans %>%
 ```
 ### Task 8: Examine the forgiveness_amount column for missing values.
 **Task** Run the following codeblock to group by forgiveness_amount, count the number of loans, then sort from highest to lowest on count. How many loans are there where forgiveness_amount is NA? Answer below.
-**Answer**:
+**Answer**: There are 135073 loans where forgiveness_amount is NA.
 
 ```{r}
 ppp_maryland_loans %>%
