@@ -350,7 +350,7 @@ cleaned_arnold_md_loans
 
 ### Task 14: Clean up city field
 **Task** Run the following codeblock to use str_tot_title() to standarize capitalization in the "city" field. How many mispellings of Arnold remain after running this code? Answer below. Add a description of what this code does to your reference notebook.
-
+**Answer** There are two misspelling of Arnold left after running this code. 
 ```{r}
 # cleaning function
 cleaned_arnold_md_loans <- arnold_md_loans %>%
