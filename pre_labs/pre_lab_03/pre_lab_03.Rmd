@@ -231,7 +231,7 @@ arnold_md_loans
 
 ### Task 6: Use clean_names()
 **Task** Run the following codeblock to use the `clean_names()` function from janitor to standardize column names. How does the function change the name of the column "1_id"? Answer below. Add a description of what this code does to your reference notebook.
-**Answer**
+**Answer** This function changes the name of column "1_id" to "x1_id". 
 
 
 ```{r}
@@ -260,7 +260,7 @@ cleaned_arnold_md_loans
 
 ### Task 8: Try summarizing the amount column
 **Task** Run the following codeblock to attempt to add up the amount of all loans. What does the error say when you run this code? What do you think it means? Answer below.
-**Answer**
+**Answer** The error i
 
 ```{r}
 # cleaning function
