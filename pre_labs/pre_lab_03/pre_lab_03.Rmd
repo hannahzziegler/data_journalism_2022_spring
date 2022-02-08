@@ -260,7 +260,7 @@ cleaned_arnold_md_loans
 
 ### Task 8: Try summarizing the amount column
 **Task** Run the following codeblock to attempt to add up the amount of all loans. What does the error say when you run this code? What do you think it means? Answer below.
-**Answer** The error i
+**Answer** The error in this codeblock is that there is an invalid character type for the argument. This means that the character type for amount is incorrect and it needs to have a different type in order to be summarized. 
 
 ```{r}
 # cleaning function
@@ -274,7 +274,7 @@ total_arnold_md_loans
 ```
 ### Task 9: Change data type for amount
 **Task** Run the following codeblock to attempt to change the datatype for the amount field to a number. What is the new data type (three letter code) for amount? Answer below.
-**Answer**
+**Answer** The new data type for amount is <dbl>.
 
 ```{r}
 # cleaning function
@@ -290,7 +290,7 @@ cleaned_arnold_md_loans
 ```
 ### Task 10: Try again to summarize the amount column
 **Task** Run the following codeblock to add up the amount of all loans in this data.  What is the total? Answer below.
-**Answer**
+**Answer** There is a total of 2033179 loans in this data. 
 ```{r}
 # cleaning function
 total_arnold_md_loans <- cleaned_arnold_md_loans %>%
@@ -304,7 +304,7 @@ total_arnold_md_loans
 
 ### Task 11: Check for duplicate rows
 **Task** Run the following codeblock to check for duplicate rows using get_dupes().  How many are there? What is the business name? Answer below.
-**Answer**
+**Answer** There are two duplicates in this data. The business name is Stuart Jones LLC.
 
 ```{r}
 cleaned_arnold_md_loans %>%
@@ -313,7 +313,7 @@ cleaned_arnold_md_loans %>%
 
 ### Task 12: Check for duplicate rows
 **Task** Run the following codeblock to use distinct() to get rid of duplicate rows. How many rows does the new dataframe have? Answer below. Add a description of what this code does to your reference notebook.
-**Answer**
+**Answer** The new dataframe now has five rows instead of six.
 
 ```{r}
 # cleaning function
@@ -331,7 +331,7 @@ cleaned_arnold_md_loans
 
 ### Task 13: Clean up ZIP code
 **Task** Run the following codeblock to use str_sub() to convert the ZIP codes that have nine digits to five digits, standardizing the field. Add a description of what this code does to your reference notebook.
-**Answer**
+**Answer** This code standardizes the ZIP codes by mutating them by the amount of characters they include. 
 
 ```{r}
 # cleaning function
@@ -370,7 +370,7 @@ cleaned_arnold_md_loans
 
 ### Task 15: Clean up city field more with case_when()
 **Task** Run the following codeblock to use case_when() to fix misspellings of Arnold in the "city" field. How many mispellings of Arnold remain after running this code? Answer below.
-**Answer**
+**Answer** Only one misspelling of Arnold remains after running this code. 
 
 ```{r}
 # cleaning function
@@ -394,7 +394,7 @@ cleaned_arnold_md_loans
 
 ### Task 16: Clean up city field more with case_when()
 **Task** Run the following codeblock to use case_when() to fix misspellings of Arnold in the "city" field using both the exact match method and the str_detect() method. How many mispellings of Arnold remain after running this code? Answer below. Add a description of what this code does to your reference notebook.
-**Answer**
+**Answer** Zero misspellings of Arnold remain after running this code. 
 ```{r}
 # cleaning function
 cleaned_arnold_md_loans <- arnold_md_loans %>%
