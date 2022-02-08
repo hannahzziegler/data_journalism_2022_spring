@@ -25,6 +25,21 @@ We won't do anything in this class that doesn't contain the command library(tidy
 The command to assign a name to a variable is number <- 2
 The command to set a working directory is setwd(). For example:
 
+## How to find columns where the value is NA
+
+filter(is.na(forgiveness_date)) %>% 
+
+## Columns that are not NA
+
+  filter(!is.na(forgiveness_date)) %>%
+  
+## Changing column names in the data set
+
+cleaned_arnold_md_loans <- arnold_md_loans %>%
+  clean_names() %>%
+  rename(id = x1_id) 
+
+
 ```{r}
 setwd("~/Documents/GitHub/data_journalism_2022_spring")
 ```
