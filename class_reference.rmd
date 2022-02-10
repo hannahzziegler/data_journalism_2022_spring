@@ -38,7 +38,43 @@ filter(is.na(forgiveness_date)) %>%
 cleaned_arnold_md_loans <- arnold_md_loans %>%
   clean_names() %>%
   rename(id = x1_id) 
+  
+## More notes on Janitor to prepare for lab 3
 
+If you're going to describe all of the data based on ZIP code, for example, it needs to be on the same basis
+  5 digit basis because all of the records have at least five digits
+  Reduce to least common denominator ish
+  
+  glimpse is very helpful to know what character types you're working with
+    if it says a number is a 
+    
+    clean_names()
+      "whatever data set I'm working with, just save the names and make them better
+      
+      rename (old, wrong name -> new name)
+      
+      distinct()
+        gets rid of duplicates
+        retrieves every unique row that is present
+        
+        
+  mutate(zip = str_sub(zip, start=1L, end=5L))
+    str_sub takes a subset of the character column 
+      takes what's in the zip column, start with the first character from the left and end with the fifth character from the left
+      
+      all changes to columns have to be in a separate mutate function
+      
+      str_to_title
+        standardizes the city names to be title case
+        doesn't matter if it's uppercase, etc it just has to be consistent
+```{r} 
+      # making consistent spellings for cities
+        mutate(city = case_when (
+        city == "Anold" ~ "Arnold",
+        TRUE ~ city
+        ))
+
+``` 
 
 ```{r}
 setwd("~/Documents/GitHub/data_journalism_2022_spring")
