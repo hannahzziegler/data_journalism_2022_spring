@@ -44,6 +44,11 @@ A1:
 
 # Write your code in this codeblock.
 
+cleaned_data <- wv_ppp_loans %>%
+  filter(project_county_name == "KANAWHA") %>%
+  clean_names() %>%
+  mutate(city = str_to_title(city)) 
+
 ```
 
 Q2: Find the 5-digit ZIP code in West Virginia that had the highest total amount of loans (by dollar value). What is the name of the business that got the largest loan (by dollar value) in that zip code? Write up a short paragraph that also answers these questions:
