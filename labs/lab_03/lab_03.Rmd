@@ -122,6 +122,14 @@ A3:The business' are owned by the spouse of Carol Miller. The business names are
 
 # Hint
 # First, create a dataframe that only has loans to those five companies
+
+miller_loans <- wv_ppp_loans %>%
+  filter(name == "DM MOTOR, INC")
+  filter(name == "DUTCH MILLER OF CHARLESTON, INC") %>%
+  filter(name == "DUTCH MILLER OF CHARLOTTE, INC") %>%
+  filter(name == "DUTCH MILLER SUBARU, INC") %>%
+  filter(name == "DUTCH MILLER CHEVROLET, INC.") %>%
+
 # Second, use that newly created dataframe to calculate total loan amount and percentage forgiven for those companies
 
 ```
