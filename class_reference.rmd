@@ -74,6 +74,13 @@ If you're going to describe all of the data based on ZIP code, for example, it n
         TRUE ~ city
         ))
 
+        mutate(city = case_when (
+        str_detect(city, "^Arnl") ~ "Arnold"
+            #string detect = if you find that the city name starts with "Arnl" then change it to Arnold
+            #using a pattern, rather than "city ==" is a great way to filter en masse
+        TRUE ~ city
+        ))
+
 ``` 
 
 ```{r}

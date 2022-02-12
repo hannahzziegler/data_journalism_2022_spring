@@ -116,7 +116,7 @@ Some hints to help you answer this question:
 * When you examine the disclosure forms, there may be lots of stock sales and retirement accounts mixed in.  Ignore those. In the table in the disclosure forms, look for "Partnership" or "C-Corp" in the column named "Income Type"
 * This is a link to details on passage of the [CARES ACT](https://www.congress.gov/bill/116th-congress/house-bill/748). You can find a link to how the House voted by clicking on a link from [this page](https://www.congress.gov/bill/116th-congress/house-bill/748/actions).
 
-A3:The business' are owned by the spouse of Carol Miller. The business names are Dutch Miller Chevrolet, Dutch Miller of Charleston, Dutch Miller of Charlotte, Dutch Miller Subaru, and DM Motors. All of the businesses are car deadlerships. 
+A3:The business' are owned by the spouse of Carol Miller. The business names are Dutch Miller Chevrolet, Dutch Miller of Charleston, Dutch Miller of Charlotte, Dutch Miller Subaru, and DM Motors. All of the businesses are car dealerships. Miller initially voted in favor of the legislation that authorized the program. 
 
 ```{r}
 
@@ -124,12 +124,14 @@ A3:The business' are owned by the spouse of Carol Miller. The business names are
 # First, create a dataframe that only has loans to those five companies
 
 miller_loans <- wv_ppp_loans %>%
-  filter(name == "DM MOTOR, INC")
-  filter(name == "DUTCH MILLER OF CHARLESTON, INC") %>%
-  filter(name == "DUTCH MILLER OF CHARLOTTE, INC") %>%
-  filter(name == "DUTCH MILLER SUBARU, INC") %>%
-  filter(name == "DUTCH MILLER CHEVROLET, INC.") %>%
+  filter_all(any_vars(str_detect(., pattern = "DUTCH MILLER"))) 
+
 
 # Second, use that newly created dataframe to calculate total loan amount and percentage forgiven for those companies
 
 ```
+filter(name == "DM MOTOR, INC")
+filter(name == "DUTCH MILLER OF CHARLESTON, INC") %>%
+  filter(name == "DUTCH MILLER OF CHARLOTTE, INC") %>%
+  filter(name == "DUTCH MILLER SUBARU, INC") %>%
+  filter(name == "DUTCH MILLER CHEVROLET, INC.") %>%
