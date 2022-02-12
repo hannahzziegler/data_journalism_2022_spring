@@ -103,7 +103,7 @@ Q3: Five business entities owned by the spouse of a member of West Virginia's U.
   * What percentage of the total loan amount have been forgiven?
   * How did the U.S. House member vote on the legislation initially authorizing the PPP loan program.
 
-A3:The business' are owned by the spouse of Carol Miller. The business names are Dutch Miller Chevrolet, Dutch Miller of Charleston, Dutch Miller of Charlotte, Dutch Miller Subaru, and DM Motors. All of the businesses are car dealerships. Miller initially voted in favor of the legislation that authorized the program. She was also a co-sponsor of the bill. 
+A3:The business' are owned by the spouse of Carol Miller. The business names are Dutch Miller Chevrolet, Dutch Miller of Charleston, Dutch Miller of Charlotte, Dutch Miller Subaru, and DM Motors. All of the businesses are car dealerships. The businesses received $3,105,300 in total loans. The amount of the total loans that were forgiven was 3,140,471. With that said, the percent forgiven is 101.1326. Miller initially voted in favor of the legislation that authorized the program. She was also a co-sponsor of the bill. 
 
 ```{r}
 
@@ -111,14 +111,16 @@ A3:The business' are owned by the spouse of Carol Miller. The business names are
 # First, create a dataframe that only has loans to those five companies
 
 miller_loans <- wv_ppp_loans %>%
-  filter_all(any_vars(str_detect(., pattern = "DUTCH MILLER"))) 
-
+  filter(str_detect(name, "DUTCH MILLER |DM MOTOR"))
+  
 
 # Second, use that newly created dataframe to calculate total loan amount and percentage forgiven for those companies
 
+miller_loans %>%
+  mutate(total_loan_amount = sum(amount),
+        total_forgiveness = sum(forgiveness_amount),
+        percent_forgiveness = (total_forgiveness/total_loan_amount)*100) %>%
+  select(name, amount, forgiveness_amount, total_loan_amount, total_forgiveness, percent_forgiveness)
+  
+  
 ```
-filter(name == "DM MOTOR, INC")
-filter(name == "DUTCH MILLER OF CHARLESTON, INC") %>%
-  filter(name == "DUTCH MILLER OF CHARLOTTE, INC") %>%
-  filter(name == "DUTCH MILLER SUBARU, INC") %>%
-  filter(name == "DUTCH MILLER CHEVROLET, INC.") %>%
