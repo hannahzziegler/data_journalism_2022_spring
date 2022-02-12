@@ -103,19 +103,6 @@ Q3: Five business entities owned by the spouse of a member of West Virginia's U.
   * What percentage of the total loan amount have been forgiven?
   * How did the U.S. House member vote on the legislation initially authorizing the PPP loan program.
 
-Feel free to add any interesting "color" (little interesting details) you find in your research.  
-
-Some hints to help you answer this question:
-
-* West Virginia's three U.S. House members are listed [here](https://www.govtrack.us/congress/members/WV#representatives)
-* To find businesses they or their families own, you can search for financial disclosure forms for U.S. House members [here](https://disclosures-clerk.house.gov/PublicDisclosure/FinancialDisclosure#Search).
-  * To speed things up, here are direct links to the three U.S. House members most recent financial disclosures, which I found by searching the site linked above.
-  * [Rep. 1](https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2020/10042042.pdf)
-  * [Rep. 2](https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2020/10040330.pdf)
-  * [Rep. 3](https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2020/10042734.pdf)
-* When you examine the disclosure forms, there may be lots of stock sales and retirement accounts mixed in.  Ignore those. In the table in the disclosure forms, look for "Partnership" or "C-Corp" in the column named "Income Type"
-* This is a link to details on passage of the [CARES ACT](https://www.congress.gov/bill/116th-congress/house-bill/748). You can find a link to how the House voted by clicking on a link from [this page](https://www.congress.gov/bill/116th-congress/house-bill/748/actions).
-
 A3:The business' are owned by the spouse of Carol Miller. The business names are Dutch Miller Chevrolet, Dutch Miller of Charleston, Dutch Miller of Charlotte, Dutch Miller Subaru, and DM Motors. All of the businesses are car dealerships. Miller initially voted in favor of the legislation that authorized the program. She was also a co-sponsor of the bill. 
 
 ```{r}
