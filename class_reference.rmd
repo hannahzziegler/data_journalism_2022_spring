@@ -93,21 +93,35 @@ group_by, summarise, then arrange
 
 Example:
 
-## How to manipulate a data frame
+## How to manipulate a data frame - Solid Template
+
+```{r}
+
 my_result <- original_data %>%
   filter(some_column == "some_value") %>%
   clean_names() %>%
   mutate(some_column = str_to_title(some_column)) %>%
   group_by(some_column)  %>%
-  summarize(new_aggregate = n()) %>%
+  summarize(new_aggregate = n()) %>% OR summarise(new_aggregate = sum(some_number_column)) %>%
   arrange(desc(new_aggregate)) 
 
 
-```{r}
-setwd("~/Documents/GitHub/data_journalism_2022_spring")
+{r}
 ```
+
+## Filter Tags
+
+& = data must be this AND this
+| = data must be this OR this
+
+filter = when there is a specific criteria 
+group_by and summarize = we want totals
+mutate = makes the data fit a specific pattern
+
+## You have to summarize the ZIP code data 
 
 ```{r}
 install.packages("tidyverse")
 library(tidyverse)
+setwd("~/Documents/GitHub/data_journalism_2022_spring")
 ```
