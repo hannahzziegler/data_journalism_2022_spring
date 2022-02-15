@@ -99,7 +99,7 @@ maryland_zcta <- read_csv('data/maryland_zcta.csv')
 
 ### Task 9: Join ZCTA to PPP Data
 **Task** Join the ZCTA data to the our PPP & NAICS data. What's the error message you get? What do you think it means? Add a description of what this code does to your reference notebook.
-**Answer**
+**Answer** We get an error message in 'join_rows()'. This error is because the ZIP codes are different character types. 
 
 ```{r}
 # join on zip - but there's a problem
