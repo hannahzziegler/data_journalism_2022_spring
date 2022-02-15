@@ -83,6 +83,26 @@ If you're going to describe all of the data based on ZIP code, for example, it n
 
 ``` 
 
+## Order of operations for filter, mutate, group by, summarise
+
+Filter -> first because it should narrow down as much data as you can before starting to mutate names, etc.
+mutate -> second because this is how the data gets narrowed down based on name, misspelling etc.
+    within mutate, you should do a case_when first and then do str_detect first
+    each line is getting executed in the order that it appears, so
+group_by, summarise, then arrange 
+
+Example:
+
+## How to manipulate a data frame
+my_result <- original_data %>%
+  filter(some_column == "some_value") %>%
+  clean_names() %>%
+  mutate(some_column = str_to_title(some_column)) %>%
+  group_by(some_column)  %>%
+  summarize(new_aggregate = n()) %>%
+  arrange(desc(new_aggregate)) 
+
+
 ```{r}
 setwd("~/Documents/GitHub/data_journalism_2022_spring")
 ```
