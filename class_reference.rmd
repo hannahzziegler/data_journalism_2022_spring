@@ -118,7 +118,15 @@ filter = when there is a specific criteria
 group_by and summarize = we want totals
 mutate = makes the data fit a specific pattern
 
-## You have to summarize the ZIP code data 
+## Bind Rows
+
+All three of these datasets have the same number of columns, all with the same names, so if we want to merge them together to compare them over time, we need to stack them together. The verb here, in R, is bind_rows
+    bind_rows expects every single column, including cases, to be identical
+    it also expects every single column to be a different data type
+    
+## Joins
+
+Start with original dataframe %>% left_join(naics_codes, by="naics_code")
 
 ```{r}
 install.packages("tidyverse")
