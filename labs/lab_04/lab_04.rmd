@@ -142,10 +142,24 @@ maryland_ppp_with_naics_and_demographics %>%
 ```
 
 **Q4** Which Maryland zip code had the largest sum of loans where the reported race of the applicant was "Asian", and what is the percentage of non-Hispanic Asian population in that zip code? Also show the number (count) of loans.
-**A4** [write your answer here]
+**A4** The ZIP code with the largest sum of loans where the reported race of the applicant was Asian was 20850. The percentage of non-Hispanic Asian Population in that ZIP code is 23.5%.
 
 ```{r}
 # Write the code to produce your answer here
+
+maryland_ppp_with_naics <- maryland_ppp_with_naics %>% mutate(zip5 = str_sub(zip, 1, 5))
+
+maryland_zcta <- maryland_zcta %>%  mutate(across(ZCTA5N, as.character))
+
+maryland_ppp_with_naics_and_demographics <- maryland_ppp_with_naics %>% left_join(maryland_zcta, by=c("zip5"="ZCTA5N"))
+
+maryland_ppp_with_naics_and_demographics %>% 
+  filter(race == "Asian") %>%
+  group_by(zip5, PNHA) %>%
+  summarize(
+    no_loans = n(),
+    count_loans = sum(amount)) %>%
+    arrange(desc(count_loans))
 
 ```
 
