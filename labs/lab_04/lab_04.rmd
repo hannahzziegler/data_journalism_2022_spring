@@ -65,7 +65,8 @@ Next join the two and then create a 5-character `zip5` column that we can use to
 ```{r}
 # add code here to accomplish the task
 
-maryland_ppp %>% left_join(naics_codes, by="naics_code")
+maryland_ppp %>% left_join(naics_codes, by="naics_code") %>%  mutate(zip5 = str_sub(zip, 1, 5))
+
 
 ```
 
