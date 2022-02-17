@@ -64,6 +64,9 @@ Next join the two and then create a 5-character `zip5` column that we can use to
 
 ```{r}
 # add code here to accomplish the task
+
+maryland_ppp %>% left_join(naics_codes, by="naics_code")
+
 ```
 
 Let's add the Zip Code Tabulation Area dataset. You'll need to make the `ZCTA5N` column a character column, not a numeric one.
