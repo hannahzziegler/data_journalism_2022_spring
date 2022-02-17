@@ -184,7 +184,7 @@ maryland_ppp_with_naics_and_demographics %>%
 ```
 
 **Q7** How many industries have exactly one loan in the data (hint: you can filter _after_ using `summarise` on any totals you create). From a newsworthiness standpoint, which of these is most worthy of further exploration, and why?
-**A7** 44 industries have exactly one loan in the data. From a newsworthiness standpoint, the industry that is most worthy of further exploration is 
+**A7** 44 industries have exactly one loan in the data. From a newsworthiness standpoint, the industry that could be worthy of further exploration is cattle feedlots. Agriculture is Maryland's largest economic industry and employs a ton of people. The Maryland cattle economy is a huge part of this agriculture in Maryland. I could also see the junior college category being a source of further exploration. Education dive found that at least 782 nonprofit two and four-year institutions received PPP loans. As a state with a ton of junior colleges, it is surprising that only one school in the whole state received a loan. 
 
 ```{r}
 # Write the code to produce your answer here
