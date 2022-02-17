@@ -55,6 +55,7 @@ First, let's load the NAICS code CSV file we have in the data folder:
 # add code here to accomplish the task
 
 naics_codes <- read_csv("data/naics_codes.csv")
+maryland_zcta <- read_csv('data/maryland_zcta.csv')
 
 ```
 
@@ -76,6 +77,9 @@ Let's add the Zip Code Tabulation Area dataset. You'll need to make the `ZCTA5N`
 
 ```{r}
 # add code here to accomplish the task
+
+maryland_zcta <- maryland_zcta %>% mutate(across(ZCTA5N, as.character))
+
 ```
 
 Now we can join the PPP data to the ZCTA data:
