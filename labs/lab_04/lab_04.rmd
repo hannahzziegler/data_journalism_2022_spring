@@ -127,7 +127,7 @@ maryland_ppp_with_naics_and_demographics %>%
 ```
 
 **Q3** Which Maryland zip code with at least 20 percent non-Hispanic Asian population had the largest sum of PPP loans? Also show the number (count) of loans.
-**A3** [write your answer here]
+**A3** The Maryland ZIP code with at least 20 percent non-Hispanic Asian population that had the largest sum of PPP loans is 20850. 
 
 ```{r}
 # Write the code to produce your answer here
