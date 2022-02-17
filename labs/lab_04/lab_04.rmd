@@ -54,8 +54,7 @@ First, let's load the NAICS code CSV file we have in the data folder:
 ```{r}
 # add code here to accomplish the task
 
-naics_codes <- read_csv("naics_codes.csv")
-
+naics_codes <- read_csv("data/naics_codes.csv")
 
 ```
 
