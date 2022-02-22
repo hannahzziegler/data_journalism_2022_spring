@@ -66,7 +66,7 @@ md_loans %>%
 
 ### Task 5: Use refinr to clean the city_clean field. 
 **Task** Run the following code to make a copy of the city field called city_clean, then use the `key_collision_merge` function from refinr to attempt to standarize similar values. Store it as a new object called clean_md_loans.  Click the black arrow on the table to examine the city and city_clean columns.  Looking at the results on the first page only (first 10 rows), name two changes the refinr package made, by comparing city to city_clean.
-**Answer**
+**Answer** It changed whether some cities were uppercase and lowercase based on how common it is that they appear in that case. For example, it made all mentions of Easton uppercase and changed all mentions of cities like Chevy Chase and Westminster to title case. 
 
 ```{r}
 cleaned_md_loans <- md_loans %>%
@@ -79,7 +79,7 @@ cleaned_md_loans
 
 ### Task 6: Filter cleaned_md_loans to examine cities that start with A 
 **Task** Run the following code to group by city_clean and city, then filter for cities that start with A. Name three changes the refinr function made.  
-**Answer**
+**Answer** The city_clean column made Abell into title case from all uppercase, it changed the uppercase iterations of Aberdeen to title case and changed the uppercase iterations of Aberdeen Proving Ground to title case. 
 
 ```{r}
 cleaned_md_loans %>%
@@ -92,7 +92,7 @@ cleaned_md_loans %>%
 ```
 ### Task 7: Use a different refinr method to clean the city_clean field. 
 **Task** Run the following code to use the n_gram_merge() function to clean the data, then group by city_clean and city to examine cities that start with A. Look at the differences. Does the changes it made vary substantially from the previous use of key_collision_merge?
-**Answer**
+**Answer** It does not seem like the n_gram_merge() function made any substantial, difference changes to the data compared to the previous use. 
 
 ```{r}
 cleaned_md_loans <- md_loans %>%
