@@ -128,6 +128,12 @@ All three of these datasets have the same number of columns, all with the same n
 
 Start with original dataframe %>% left_join(naics_codes, by="naics_code")
 
+## To make a csv file from other data that you have imported
+
+write_csv(name of data frame I'm writing, "data/full path name of cvs file (name this the same thing as dataframe.csv") 
+AKA
+write_csv(college_park_loans, "data/college_park_loans.csv")
+
 ```{r}
 install.packages("tidyverse")
 library(tidyverse)
