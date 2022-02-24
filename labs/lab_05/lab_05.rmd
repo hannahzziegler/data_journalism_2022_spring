@@ -123,9 +123,12 @@ berkeley_clean_cities %>%
   ) %>%
   arrange(desc(count))
 
-berkeley_ppp_with_naics <- berkeley_clean_cities %>% left_join(naics_codes, by="naics_code")
+martinsburg_ppp <- berkeley_clean_cities %>%
+  filter(city_edited == "Martinsburg")
 
-berkeley_ppp_with_naics %>%
+martinsburg_ppp_with_naics <- martinsburg_ppp %>% left_join(naics_codes, by="naics_code")
+
+martinsburg_ppp_with_naics %>%
   group_by(naics_code) %>%
   summarise(
     count=n()
