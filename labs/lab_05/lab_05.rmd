@@ -73,18 +73,19 @@ Then answer these questions:
 * How many loans are there at that street address?
 * What are the names of the businesses at that address?
 
-**A1.**
+**A1.** 126 E Burke St is the street address in this data that has the most loans. There are six loans at this street address. The names of the businesses at this street address are Drew Holdings LLC, Brix27 LLC, Abraham Ashton, Hubb Co-Op LLC and Ronnin Properties LLC.
 
 ```{r}
 
 read_csv("data/zip_25401_loan_sample.csv") 
 clean_25401 <- read_csv("data/zip_25401_loan_sample_clean.csv") 
 
-aggregate_address <- clean_25401 %>%
+clean_25401 %>%
   group_by(address) %>%
   summarise(
-    n()
-  )
+    count=n()
+  ) %>%
+  arrange(desc(count))
 
 ```
 
