@@ -47,9 +47,10 @@ All three data sets are in the data folder.  Write code to load the three in the
 
 ```{r}
 
-read_csv("data/naics_codes.csv")
-read_csv("data/wv_population_county.csv")
-read_rds("data/lab_05.rds")
+naics_codes <- read_csv("data/naics_codes.csv")
+wv_population_county <- read_csv("data/wv_population_county.csv")
+wv_ppp_loans <- read_rds("data/lab_05.rds")
+zip_25401_loan_sample <- read_csv("data/zip_25401_loan_sample.csv")
 
 ```
 
@@ -76,6 +77,15 @@ Then answer these questions:
 
 ```{r}
 
+read_csv("data/zip_25401_loan_sample.csv") 
+clean_25401 <- read_csv("data/zip_25401_loan_sample_clean.csv") 
+
+aggregate_address <- clean_25401 %>%
+  group_by(address) %>%
+  summarise(
+    n()
+  )
+
 ```
 
 **Q2.** Do some web research on the businesses that answered question 1.  
@@ -91,11 +101,37 @@ Based on your research, does it seem suspicious that this collection of business
 * Which city in that county had the highest number of loans?
 * In that city, which industry title had more loans than any other industry title?
 
+The county is Berkeley County. The city in the county with the highest number of loans is Martinsburg. 
+
 Requirement: you MUST export a dataframe of PPP loans from R Studio at some point in the process (not necessarily at the beginning!), load it into Open Refine, clean the city column, export it from Open Refine, and reimport into R Studio. To export data from R Studio, you will use the write_csv() function, which works like this if we're using the wv_population_county dataframe:
 
 ```{r}
-# write_csv accepts 2 arguments: the dataframe and the path to the file you write out
-write_csv(wv_population_county, "data\wv_population_county.csv")
+
+wv_population_county %>%
+  arrange(desc(population_2019))
+  
+berkeley_loans <- wv_ppp_loans %>%
+  filter(project_county_name == "BERKELEY")
+
+write_csv(berkeley_loans, "data/berkeley_loans")
+
+berkeley_clean_cities <- read_csv("data/berkeley-loans.csv")
+berkeley_clean_cities %>%
+  group_by(city_edited) %>%
+  summarize(
+    count=n()
+  ) %>%
+  arrange(desc(count))
+
+berkeley_ppp_with_naics <- berkeley_clean_cities %>% left_join(naics_codes, by="naics_code")
+
+berkeley_ppp_with_naics %>%
+  group_by(naics_code) %>%
+  summarise(
+    count=n()
+  ) %>%
+  arrange(desc(count))
+
 ```
 
 Guidance: there are a lot of steps you'll need to take to answer this question. You may find it helpful to write out in English what you plan to do step-by-step before you start writing code.   
