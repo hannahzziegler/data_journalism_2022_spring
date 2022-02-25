@@ -154,13 +154,12 @@ martinsburg_ppp_with_naics %>%
 * When was it approved?
 * How many jobs does the data say were retained?
 * Is there a difference between the business' name in the PPP data and the name its customers know it by? If so, what is that name?
-
 * How many locations does this business have?
 * Did one of its locations close during the pandemic, either before or after it got the loan?
 
 Hint: you will not find the answers to the last three questions in the data.  You could call them directly to get that information, but I don't want you to do that for this assignment.  Instead, do some web research. I would start by Googling the company name from the data and looking at the page that comes up for the business from at http://apps.sos.wv.gov/. I would use information I found on that page and use info about the company from Google, the [Wayback machine](https://archive.org/web/) (which lets you look at older versions of a company's website), Yelp, and Facebook.
 
-**A5.** The name of the full-service restaurant business that got the highest approved loan amount in Martinsburg, West Virginia, is COTTLE CHRISTI L LLC. The loan was for $280434.00. It was approved on February 17, 2021. The data says it retained 94 jobs. This company name is not the one that customers know it by. The company's most common name is Kitzie's Cafe or Kitzie's Restaurant and Lounge. It appears that the restaurant has two locations, one being Spring Hills and one being in Martinsburg. 
+**A5.** The name of the full-service restaurant business that got the highest approved loan amount in Martinsburg, West Virginia, is COTTLE CHRISTI L LLC. The loan was for $280434.00. It was approved on February 17, 2021. The data says it retained 94 jobs. This company name is not the one that customers know it by. The company's most common name is Kitzie's Cafe or Kitzie's Restaurant and Lounge. On the company's website, it appears that the restaurant has two locations, one being Spring Hills and one being in Martinsburg. But the West Virginia business summary states that the Cottle Christi L LLC holdings have owned four Kitzie's and one restaurant named Riverbend Bar and Grill. One location of Kitzie's, Kitzie's Inwood, closed in May 2020 before the restaurant chain received their PPP loan. Another location closed in 2018. 
 
 ```{r}
 
