@@ -88,7 +88,8 @@ clean_25401 %>%
   arrange(desc(count))
 
 clean_25401 %>% 
-  filter(str_detect(address_original, "126 "))
+  filter(str_detect(address_original, "126 ")) %>%
+  select(name, amount, address)
 
 ```
 
