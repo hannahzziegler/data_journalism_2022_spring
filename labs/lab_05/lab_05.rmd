@@ -99,7 +99,7 @@ Google the street address.  Google the business names and search for their corpo
 
 Based on your research, does it seem suspicious that this collection of businesses all got loans using the same address? Why or why not. Use specific facts identified in your research to support your position.
 
-**A2.** 
+**A2.** I don't think it seems suspicious that these companies all got loans at the same address. The address in question is a community workspace where different companies can rent out and use the space for business or other events. It seems that Ronin Properties is a real estate agent's LLC and it is very possible that this agent works at the Hub rather than his own office space. Brix27 seems to be a restaurant that is inside of the Hub where workers can go. Abraham Ashton is a sole proprietorship, which makes it more realistic for the single owner to rent a space like the Hub for doing work. Open Corporates also lists Drew Holdings as a single-person operation that works in real estate, so this address also makes sense as a place where the owner would conduct their business operations. 
 
 **Q3.** Start by using the West Virginia slice of the PPP loan data that you loaded at the start of the lab to create a subset of PPP loans in West Virginia's second largest county (which you can find in wv_population_county). And then use that table you created to answer the following questions:
 
