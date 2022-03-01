@@ -134,6 +134,11 @@ write_csv(name of data frame I'm writing, "data/full path name of cvs file (name
 AKA
 write_csv(college_park_loans, "data/college_park_loans.csv")
 
+## Changing the column names
+lender_types <- read_csv("tabula-PPP_Report_Public_210531-508.csv", skip=1, col_names=c("type", "count", "approved", "net_dollars"))
+
+"skip=1 is skipping the first row, after this rename the column names using col_names=c"
+
 ```{r}
 install.packages("tidyverse")
 library(tidyverse)
