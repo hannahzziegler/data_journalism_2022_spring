@@ -96,7 +96,7 @@ migration_type %>%
 # Write the code to produce your answer here
 
 migration_type %>%
-  mutate(percent_change = (-/)*100) %>% 
+  mutate(percent_change = ()*100) %>% 
   arrange(desc(percent_change))
 
 ```
@@ -138,10 +138,13 @@ domestic_migration %>%
 
 ## Answer questions
 **Q5** Which Maryland individual jurisdiction saw the largest net decrease in domestic migration overall?
-**A5** [write your answer here]
+**A5** The individual Maryland jurisdiction with the largest net decrease in domestic migration overall is Baltimore City. 
 
 ```{r}
 # Write the code to produce your answer here
+
+domestic_migration %>%
+arrange(Total)
 
 ```
 
@@ -151,6 +154,7 @@ domestic_migration %>%
 ```{r}
 # Write the code to produce your answer here
 # filtering filter(2017 > 0 and 2019 > 0)
+# have to use select, too
 
 ```
 
