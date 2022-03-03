@@ -79,7 +79,7 @@ migration_type <- international_migration %>%
 ```{r}
 # Write the code to produce your answer here
 
-percent_migration_type <- migration_type %>%
+migration_type %>%
   mutate(percent = (Total/198996)*100) %>% 
   arrange(desc(percent))
 
@@ -94,6 +94,10 @@ percent_migration_type <- migration_type %>%
 
 ```{r}
 # Write the code to produce your answer here
+
+migration_type %>%
+  mutate(percent_change = (Total/198996)*100) %>% 
+  arrange(desc(percent_change))
 
 ```
 
