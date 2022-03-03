@@ -66,9 +66,8 @@ Add a column for the type of migration ("international") and populate it:
 ```{r}
 # Write the code to add the column here
 
-migration_type <- international_migration %?%
-  mutate() %?%
-View(lender_types)
+migration_type <- international_migration %>%
+  mutate(migration_type = "international")
 
 ```
 
