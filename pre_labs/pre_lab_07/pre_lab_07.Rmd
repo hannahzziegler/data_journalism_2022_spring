@@ -422,7 +422,7 @@ From here, we can use the html_tables() function to transform it from messy html
 
 ### Task 10: Run code to convert to table
 **Task** Run the following code to convert to table. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The codeblock below includes two columns with six rows. One is called "data series" with employment and unemployment information. The other column has backdata and is mostly empty. 
 
 ```{r}
 
