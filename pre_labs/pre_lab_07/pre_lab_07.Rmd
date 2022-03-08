@@ -422,7 +422,7 @@ From here, we can use the html_tables() function to transform it from messy html
 
 ### Task 10: Run code to convert to table
 **Task** Run the following code to convert to table. Briefly describe the output that appears below the codeblock.
-**Answer** The codeblock below includes two columns with six rows. One is called "data series" with employment and unemployment information. The other column has backdata and is mostly empty. 
+**Answer** The codeblock below includes six columns with six rows. One is called "data series" with employment and unemployment information. The other column has backdata and is mostly empty. Every other column has the data for each of the months from the original table. 
 
 ```{r}
 
@@ -447,7 +447,7 @@ Use clean_names() to standardize the column names, use slice() to keep only the 
 
 ### Task 11: Run code to keep row 2 and light cleaning
 **Task** Run the following code to keep row 2 and light cleaning. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output that appears in this codeblock is the value that we wanted from the original data: just the employment of all employees for the month November 2021. 
 
 ```{r}
 
@@ -480,7 +480,7 @@ The info for mining is on this page: [https://www.bls.gov/iag/tgs/iag21.htm](htt
 
 ### Task 12: Go to the web page linked above
 **Task** Visit the web page linked above. Briefly describe what you see there.
-**Answer**
+**Answer** This page is similar to the utilities sector and includes many of the structures in the html page that appeared for that sector. It also includes the employment/unemployment data table. 
 
 The info for construction is on this page: [https://www.bls.gov/iag/tgs/iag23.htm](https://www.bls.gov/iag/tgs/iag23.htm).
 
