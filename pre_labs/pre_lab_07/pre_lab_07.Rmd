@@ -1055,7 +1055,7 @@ And inside our "for loop" at the end, we'll bind each employment_info dataframe 
 
 ### Task 35: Run code to run for loop to combine tables into a single table
 **Task** Run the following for loop combine tables into a single table. Briefly describe the output that appears below the codeblock.
-**Answer** The end result is a dataframe that includes all of the data that we need in our table. It includes the sector, description of the sector and the number of employees for November 2021. 
+**Answer** The end result is one single dataframe that includes all of the data that we need in our table. It includes the sector, description of the sector and the number of employees for November 2021. 
 
 ```{r}
 
@@ -1112,7 +1112,7 @@ Here's the table on the mining sector page: [https://www.bls.gov/iag/tgs/iag21.h
 
 ### Task 36: Go to the web page linked above
 **Task** Visit the web page linked above. Briefly describe what you see there.
-**Answer**
+**Answer** The page displays the workforce statistics for the mining sector. 
 
 ### Task 37: Load image
 **Task** Run the following code to display an image showing what you should see on the web page.
@@ -1126,7 +1126,7 @@ And here's the table for the agriculture sector.
 
 ### Task 38: Go to the web page linked above
 **Task** Visit the web page linked above. Briefly describe what you see there.
-**Answer**
+**Answer** The data does not display as many workforce statistics and does not include any information on the employment, which is what we are looking for in this dataframe we are creating. It is structured differently than the other pages we have investigated. 
 
 ### Task 39: Load image
 **Task** Run the following code to display an image showing what you should see on the web page.
@@ -1140,7 +1140,7 @@ In the second row of this table, it has the unemployment rate. Nowhere on the pa
 
 ### Task 40: Run code to remove agriculture from table
 **Task** Run the following code to remove agriculture from table. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** This code removes the agriculture sector from the table. There are now 19 rows of employee data for each sector. 
 
 ```{r}
 # remove the suspicious value for agriculture.
