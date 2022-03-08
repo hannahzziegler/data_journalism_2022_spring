@@ -285,7 +285,7 @@ Now, let's run the code we wrote in the last chapter, to get a tidy list of NAIC
 
 ### Task 2: Run code to load the table from the last chapter
 **Task** Run the following code to load table from last chapter. Briefly describe the output that appears below the codeblock.
-**Answer** The output includes a table tha tincludes the 20 sectors and descriptions from table #2 on the html site. 
+**Answer** The output includes a table tha tincludes the 20 sectors and descriptions from table #2 on original the html site. 
 ```{r}
 # Define url of page we want to scrape
 
@@ -325,7 +325,7 @@ We can find it here: [https://www.bls.gov/iag/tgs/iag22.htm](https://www.bls.gov
 
 ### Task 4: Go to the web page linked above
 **Task** Visit the web page linked above. Briefly describe what you see there.
-**Answer** There are more tables that display the data present in this page, including the employment and unemployment information for the utilities workforce. 
+**Answer** It looks very similar to the utilities page, with tables describing employment and other statistics relating to the classification. 
 
 A few scrolls down the page, there's a table that has employee statistics.  
 
