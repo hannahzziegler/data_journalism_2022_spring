@@ -852,7 +852,7 @@ To see how this is working, we're going to edit our print statement at the end a
 
 ### Task 30: Run code to run for loop to store url and xpath value
 **Task** Run the following for loop to store url and xpath value. Briefly describe the output that appears below the codeblock.
-**Answer** The code stores the url and xpath value. It iterates over each row in the naics industry dataframe and defines the url and id of the table to ingest. 
+**Answer** The code stores the url and xpath value. It iterates over each row in the naics industry dataframe and defines the url and id of the table to ingest. There us a url and an xpath for each row. 
 ```{r}
 
 # For loop, iterating over each row in our naics industry dataframe
@@ -885,7 +885,7 @@ So, when you run this code, it will print out 19 dataframes inside of nested lis
 
 ### Task 31: Run code to run for loop to get tables
 **Task** Run the following for loop to get tables. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output gives a separate dataframe from each naics industry with the employment and unemployment data from the html page. Each dataframe contains employment numbers for each sector. 
 
 ```{r}
 
@@ -1055,7 +1055,7 @@ And inside our "for loop" at the end, we'll bind each employment_info dataframe 
 
 ### Task 35: Run code to run for loop to combine tables into a single table
 **Task** Run the following for loop combine tables into a single table. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The end result is a dataframe that includes all of the data that we need in our table. It includes the sector, description of the sector and the number of employees for November 2021. 
 
 ```{r}
 
