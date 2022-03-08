@@ -758,7 +758,7 @@ We're going to use mutate() and paste0() to concatenate (mash together) the thin
 
 ### Task 26: Run code to build url
 **Task** Run the following code to build url. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The codeblock adds a column that has the url for each sector that we need that corresponds with the sector code. 
 
 ```{r}
 
@@ -780,7 +780,7 @@ On the Utilities page (sector code 22), the ID for the table we want is "iag22em
 
 ### Task 27: Run code to build id
 **Task** Run the following code to build id. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The codeblock adds the tag to the html table that contains the information that we want to use from each page, in this case the employment table. 
 
 ```{r}
 
@@ -797,7 +797,7 @@ Lastly, we're going to use filter to remove the "Public Administration" sector, 
 
 ### Task 28: Run code to filter table
 **Task** Run the following code to filter table. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The codeblock deletes the row pertaining to Public Administration sector. 
 
 ```{r}
 
@@ -820,7 +820,7 @@ We get 19 dataframes, each with one row, one for each sector.
 
 ### Task 29: Run code to run for loop and keep one row
 **Task** Run the following for loop and keep one row. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The loop creates a separate dataframe for each sector that includes its sector number, description, url and xpath_id. 
 
 ```{r}
 
@@ -852,7 +852,7 @@ To see how this is working, we're going to edit our print statement at the end a
 
 ### Task 30: Run code to run for loop to store url and xpath value
 **Task** Run the following for loop to store url and xpath value. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The code stores the url and xpath value. It iterates over each row in the naics industry dataframe and defines the url and id of the table to ingest. 
 ```{r}
 
 # For loop, iterating over each row in our naics industry dataframe
