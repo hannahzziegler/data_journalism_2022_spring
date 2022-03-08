@@ -548,14 +548,14 @@ And now let's write a "for loop" to print out sector on that list.
 
 ### Task 16: Run code to use for loop to print sectors
 **Task** Run the following code to use a for loop to print list of sectors. Briefly describe the output that appears below the codeblock.
-**Answer** The output is the name of each sector in quotation marks, next to a [1].
+**Answer** The code prints an error. The object "sector_list" is not found.
 ```{r}
 # Define list of sectors
 list_of_sectors <- c("Agriculture, Forestry, Fishing and Hunting", "Mining, Quarrying, and Oil and Gas Extraction", "Utilities", "Construction", "Manufacturing",
 "Wholesale Trade", "Retail Trade", "Transportation and Warehousing", "Information", "Finance and Insurance")
 
 # Make a for loop and run it
-for (sector in list_of_sectors) {
+for (sector in sector_list) {
   print(sector)
 }
 
@@ -597,7 +597,7 @@ To illustrate this, note that the code works just fine if we change it to say th
 
 ### Task 18: Run code to use for loop to print sectors
 **Task** Run the following code to use a for loop to print list of sectors. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output is the name of each sector in quotation marks, next to a [1].
 ```{r}
 # Define list of sectors
 list_of_sectors <- c("Agriculture, Forestry, Fishing and Hunting", "Mining, Quarrying, and Oil and Gas Extraction", "Utilities", "Construction", "Manufacturing",
@@ -617,7 +617,7 @@ In this code below, it has no idea what we mean by "sector_name", because we hav
 
 ### Task 19: Run code to use for loop to print sectors that errors
 **Task** Run the following code to use a for loop to print list of sectors. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The code prints an error because "sector_name" is not found. 
 ```{r, error=TRUE}
 # Define list of sectors
 list_of_sectors <- c("Agriculture, Forestry, Fishing and Hunting", "Mining, Quarrying, and Oil and Gas Extraction", "Utilities", "Construction", "Manufacturing",
@@ -637,7 +637,7 @@ The code below says: "for each number in a range of numbers from 1 to 10, print 
 
 ### Task 20: Run code to use for loop to print 1 to 10
 **Task** Run the following code to use a for loop to print 1 to 10. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The code prints the numbers 1-10 with a [1] before each one. 
 ```{r}
 # For loop that includes instructions that refer to a variable that doesn't exist.
 for (number in 1:10) {
@@ -652,7 +652,7 @@ Instead of giving the for loop an explicit number range, like 1:10, we can tell 
 Remember the naics_industry dataframe we loaded first? It has 20 rows.
 ### Task 21: Run code to display naics_industry
 **Task** Run the following code to display naics_industry. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output displays a dataframe of each naics industry with the sector number and description. 
 
 ```{r}
 
@@ -664,7 +664,7 @@ We can use that information in our for loop by using the nrow() function, which 
 
 ### Task 22: Run code to display number of rows in naics_industry
 **Task** Run the following code to display number of rows naics_industry. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output in the codeblock is the number 20, which is the number of rows in the naics_industry dataframe. 
 
 ```{r}
 nrow(naics_industry)
@@ -674,7 +674,7 @@ To put it all together, the code below says "make a list of numbers that starts 
 
 ### Task 23: Run code to print each row number in naics_industry
 **Task** Run the following code to to print each row number in naics_industry. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** This code assigns a number to each row within the naics_industry dataframe. 
 
 ```{r}
 # For loop that includes instructions that refer to a variable that doesn't exist.
@@ -691,7 +691,7 @@ First, let's look at the codeblock we wrote earlier to extract the number of emp
 
 ### Task 24: Run code to load table from earlier
 **Task** Run the following code to load table from earlier. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output in the codeblock displays one row with two columns -- the employment and November 2021 employment rate. 
 
 ```{r}
 
@@ -718,7 +718,7 @@ This contains all the steps we needed to extract the information from one sector
 First, we need to build a list of URLs to loop through in a "for loop." We can do that using the dataframe we made in the last chapter.
 ### Task 25: Run code to load the table from the last chapter
 **Task** Run the following code to load table from last chapter. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output reads in all of the html from the table and stores all them. It filters to only keep the second dataframe on the original html page we were using, standardizes column headers and removes the last row. 
 ```{r}
 # Define url of page we want to scrape
 
