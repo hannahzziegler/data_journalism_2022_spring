@@ -780,7 +780,7 @@ On the Utilities page (sector code 22), the ID for the table we want is "iag22em
 
 ### Task 27: Run code to build id
 **Task** Run the following code to build id. Briefly describe the output that appears below the codeblock.
-**Answer** The codeblock adds the tag to the html table that contains the information that we want to use from each page, in this case the employment table. 
+**Answer** The codeblock adds the tag to the html table that contains the information that we want to use from each page using the xpath.
 
 ```{r}
 
@@ -797,7 +797,7 @@ Lastly, we're going to use filter to remove the "Public Administration" sector, 
 
 ### Task 28: Run code to filter table
 **Task** Run the following code to filter table. Briefly describe the output that appears below the codeblock.
-**Answer** The codeblock deletes the row pertaining to Public Administration sector. 
+**Answer** The codeblock deletes the row pertaining to Public Administration sector. Now, there are 19 rows in the dataframe. 
 
 ```{r}
 
@@ -885,7 +885,7 @@ So, when you run this code, it will print out 19 dataframes inside of nested lis
 
 ### Task 31: Run code to run for loop to get tables
 **Task** Run the following for loop to get tables. Briefly describe the output that appears below the codeblock.
-**Answer** The output gives a separate dataframe from each naics industry with the employment and unemployment data from the html page. Each dataframe contains employment numbers for each sector. 
+**Answer** The output gives a separate dataframe from each naics industry with the employment and unemployment data from the html page. Each dataframe contains all employment numbers from the original html table for each sector. 
 
 ```{r}
 
@@ -919,7 +919,7 @@ In this next step, we use employment_info <- employment_info[[1]]  to extract ea
 
 ### Task 32: Run code to run for loop to clean up tables
 **Task** Run the following for loop to clean up tables. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** This table cleans up all of the previously made tables for each row to make sure they only show the November 2021 employment. The output also standardizes the columns names and uses slice to show only the row that we want to see. 
 
 ```{r}
 
@@ -960,7 +960,7 @@ We can add that back in by using bind_cols() to reconnect the each_row_df, which
 
 ### Task 33: Run code to run for loop to add in data
 **Task** Run the following for loop to add in data. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output adds columns that include the sector code and name. These descriptors are added to the previous table that we made that included the employment data from each month, as well as the xpath and url.
 
 ```{r}
 
@@ -1002,7 +1002,7 @@ Let's use parse_number() to remove the comma from the jun_2021 number and conver
 
 ### Task 34: Run code to run for loop to clean up tables
 **Task** Run the following for loop to clean up tables. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The new dataframes now only include the naics sector number, description and November 2021 employment for each naics sector. 
 
 ```{r}
 
