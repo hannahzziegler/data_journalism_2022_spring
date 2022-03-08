@@ -486,7 +486,7 @@ The info for construction is on this page: [https://www.bls.gov/iag/tgs/iag23.ht
 
 ### Task 13: Go to the web page linked above
 **Task** Visit the web page linked above. Briefly describe what you see there.
-**Answer**
+**Answer** This page is also very similar to the utilities and mining sectors. It includes many of the same structures/html layouts as the html page that was present for the utilities sector. It also includes the employment/unemployment data table.
 
 We have 20 sectors to get through.  
 
@@ -513,7 +513,7 @@ First, let's do it the repetitive way.  We're writing the same print function ov
 
 ### Task 14: Run code to print sectors
 **Task** Run the following code to print sectors. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output appears as each sector name standardized and ready to be used as column names in the dataframe. 
 ```{r}
 
 print("Agriculture, Forestry, Fishing and Hunting")
@@ -537,7 +537,7 @@ First let's make a list of sectors, and save it as an object called "list_of_sec
 
 ### Task 15: Run code to make list of sectors
 **Task** Run the following code to make list of sectors. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** It names the columns after each sector that we need to examine to create this dataframe. 
 ```{r}
 list_of_sectors <- c("Agriculture, Forestry, Fishing and Hunting", "Mining, Quarrying, and Oil and Gas Extraction", "Utilities", "Construction", "Manufacturing",
 "Wholesale Trade", "Retail Trade", "Transportation and Warehousing", "Information", "Finance and Insurance")
@@ -548,7 +548,7 @@ And now let's write a "for loop" to print out sector on that list.
 
 ### Task 16: Run code to use for loop to print sectors
 **Task** Run the following code to use a for loop to print list of sectors. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output is the name of each sector in quotation marks, next to a [1].
 ```{r}
 # Define list of sectors
 list_of_sectors <- c("Agriculture, Forestry, Fishing and Hunting", "Mining, Quarrying, and Oil and Gas Extraction", "Utilities", "Construction", "Manufacturing",
@@ -572,7 +572,7 @@ If we try to feed it something different -- say "sector_list" -- it won't work, 
 
 ### Task 17: Run code to use for loop to print sectors that errors
 **Task** Run the following code to use a for loop to print list of sectors that errors. Briefly describe the output that appears below the codeblock.
-**Answer**
+**Answer** The output is the name of each sector in quotation marks, next to a [1].
 
 ```{r, error=TRUE}
 # Define list of sectors
@@ -580,7 +580,7 @@ list_of_sectors <- c("Agriculture, Forestry, Fishing and Hunting", "Mining, Quar
 "Wholesale Trade", "Retail Trade", "Transportation and Warehousing", "Information", "Finance and Insurance")
 
 # For loop that refers to a list that doesn't exist!  
-for (sector in sector_list) {
+for (sector in list_of_sectors) {
   print(sector)
 }
 
