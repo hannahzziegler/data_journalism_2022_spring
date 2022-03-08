@@ -325,7 +325,7 @@ We can find it here: [https://www.bls.gov/iag/tgs/iag22.htm](https://www.bls.gov
 
 ### Task 4: Go to the web page linked above
 **Task** Visit the web page linked above. Briefly describe what you see there.
-**Answer** It looks very similar to the utilities page, with tables describing employment and other statistics relating to the classification. 
+**Answer** It includes tables describing employment and other statistics relating to the classification. There are six different tables with information on this webpage. 
 
 A few scrolls down the page, there's a table that has employee statistics.  
 
@@ -359,7 +359,7 @@ Next, let's read in the html of that page, and store it as an object called empl
 
 ### Task 7: Run code to read in html
 **Task** Run the following code to read in the html. Briefly describe the output that appears below the codeblock.
-**Answer** The output includes html nested with head and body tags that describe the layout of the webpage. It is a list of 2 in the environment. 
+**Answer** The output includes html code nested with head and body tags that describe the layout of the webpage. It is a list of 2 in the environment. 
 
 ```{r}
 
@@ -400,7 +400,7 @@ But essentially what the html_element function says is "find the html element th
 
 ### Task 9: Run code to get html_element with info we need
 **Task** Run the following code to get html_element with info we need. Briefly describe the output that appears below the codeblock.
-**Answer** The code outputs the html element descriptions that correspond to the table that we want to see. It shows the tags repated to the table with employment information. We used html element to filter for only the element that we want -- in this case the November 2021 employment and unemployment data. 
+**Answer** The code outputs the html element descriptions that correspond to the table that we want to see. It shows the tags related to the table with employment information. We used html element to filter for only the element that we want -- in this case the November 2021 employment data. 
 
 ```{r}
 
@@ -422,7 +422,7 @@ From here, we can use the html_tables() function to transform it from messy html
 
 ### Task 10: Run code to convert to table
 **Task** Run the following code to convert to table. Briefly describe the output that appears below the codeblock.
-**Answer** The codeblock below includes six columns with six rows. One is called "data series" with employment and unemployment information. The other column has backdata and is mostly empty. Every other column has the data for each of the months from the original table. 
+**Answer** The codeblock below includes six columns with six rows. One is called "data series" with employment and unemployment information. The other column has backdata and is mostly empty. Every other column has the data for each of the months from the original table on the html page with information on employment and unemployment across four months. 
 
 ```{r}
 
@@ -513,7 +513,7 @@ First, let's do it the repetitive way.  We're writing the same print function ov
 
 ### Task 14: Run code to print sectors
 **Task** Run the following code to print sectors. Briefly describe the output that appears below the codeblock.
-**Answer** The output appears as each sector name standardized and ready to be used as column names in the dataframe. 
+**Answer** The output appears as each sector name standardized and ready to be used as column names in the dataframe. The output names each sector in quotation marks next to a [1]. 
 ```{r}
 
 print("Agriculture, Forestry, Fishing and Hunting")
@@ -537,7 +537,7 @@ First let's make a list of sectors, and save it as an object called "list_of_sec
 
 ### Task 15: Run code to make list of sectors
 **Task** Run the following code to make list of sectors. Briefly describe the output that appears below the codeblock.
-**Answer** It names the columns after each sector that we need to examine to create this dataframe. 
+**Answer** It names a different row after each sector that we need to examine to create this dataframe. 
 ```{r}
 list_of_sectors <- c("Agriculture, Forestry, Fishing and Hunting", "Mining, Quarrying, and Oil and Gas Extraction", "Utilities", "Construction", "Manufacturing",
 "Wholesale Trade", "Retail Trade", "Transportation and Warehousing", "Information", "Finance and Insurance")
