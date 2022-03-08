@@ -79,7 +79,7 @@ In our web browser, if we right-click anywhere on the page and select "view sour
 
 ### Task 3: View source
 **Task** Follow the directions in the previous paragraph. Briefly describe what you see there.
-**Answer**
+**Answer** I see the full html code with head and body tags that is driving the display on this webpage. 
 
 Here's a picture of what some of the source code looks like.
 
@@ -96,7 +96,7 @@ Let's write a bit of code to tell R to go to the URL for the page and ingest all
 
 ### Task 5: Run code to read in html
 **Task** Run the following code to read in the html. Briefly describe the output that appears below the codeblock.
-**Answer** The output that appears below the codeblock appears to have HTML code within it. R is holding the HTML page source within it.
+**Answer** The output that appears below the codeblock appears to have HTML code within it. It includes nested elements like head and body tags with classes within them. R is now holding the HTML page source within it.
 
 ```{r}
 # read in the html
@@ -148,7 +148,7 @@ Because it's inside of a table, and not some other kind of element (like a `<div
 
 ### Task 10: Run code to process tables
 **Task** Run the following code to process tables. Briefly describe the output that appears below the codeblock.
-**Answer** There are six different tables that R produces of each table that was present on the original html page. 
+**Answer** There are six different dataframes that R produces. Each one contains a table that was present on the original html page. 
 
 ```{r}
 # read in the html and extract all the tables
@@ -186,7 +186,7 @@ Click on the scroll icon for the first dataframe examine it.
 
 ### Task 13: Click scroll icon
 **Task** Follow the directions in the previous paragraphs. Briefly describe what you see there.
-**Answer** The scroll icon produces a table with the data that corresponds to the format that is outlined in the original List of 6 that was present before clicking. 
+**Answer** The scroll icon produces a table with the data that corresponds to the format in the original List of 6 that was present before clicking. 
 
 ### Task 14: Load image
 **Task** Run the following code to display an image showing what you should see when you follow the steps in task 13.
@@ -201,7 +201,7 @@ Let's try clicking on the scroll icon for row 2.
 
 ### Task 15: Click scroll icon
 **Task** Follow the directions in the previous paragraph. Briefly describe what you see there.
-**Answer** 
+**Answer** The table includes the information we are looking for of the 20 different sector codes and their descriptions, plus an extra row describing the source. 
 
 ### Task 16: Load image
 **Task** **Task** Run the following code to display an image showing what you should see when you follow the steps in task 15.
