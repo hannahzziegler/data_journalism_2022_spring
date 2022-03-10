@@ -78,7 +78,7 @@ Q4. The website (https://www.justice.gov/criminal-fraud/cares-act-fraud) shows t
 **A4** Smith is a rapper. He was arrested for his “alleged participation in a scheme to file fraudulent loan applications seeking more than $24 million in forgivable Paycheck Protection Program (PPP) loans guaranteed by the Small Business Administration (SBA) under the Coronavirus Aid, Relief, and Economic Security (CARES) Act,” according to the Department of Justice complaint. The Miami Herald reported this information in April 2021. I would absolutely assign a reporter to write a story about this case when the complaint was filed in court. This is a relatively public figure in the the Southern Florida community and it is a big deal that he was accursed of more than $24 million in fradulent PPP loans. 
 
 Q5. In what percentage of all judicial districts has the U.S. Department of Justice filed cases cases against people accused of fraud related to the PPP or EIDL loan program, according to the DOJ website listing those cases: https://www.justice.gov/criminal-fraud/cares-act-fraud? In answering this question, you should also produce a list of judicial districts where DOJ has NOT filed a case, according to this site.  Note: to answer this question, you will need to scrape a table of all district courts on this up-to-date Wikipedia page under the heading "Active Courts": https://en.wikipedia.org/wiki/List_of_United_States_district_and_territorial_courts  
-**A5** 
+**A5** The Department of Justice has filed PPP or EIDL cases in roughly 33 percent of judicial districts. 
 
 
 ```{r}
@@ -91,8 +91,7 @@ active_courts  <- district_courts_url %>%
 
 active_courts <- active_courts[[3]]
 
-active_courts %>%
-  select(Region)
+answer = (31/94)*100
 
 ```
 Q6 What might explain why, according to this site, the DOJ has filed PPP-related fraud cases in less than half of the country's judicial districts?
