@@ -59,9 +59,18 @@ cases_dataframe <- as.data.frame(doj_cases)
 ```
 
 Q2. In how many individual judicial districts has the U.S. Department of Justice filed cases against people accused of fraud related to the PPP or EIDL loan program, according to the DOJ website listing those cases: https://www.justice.gov/criminal-fraud/cares-act-fraud?  Note: an example of a judicial district is "Southern District of Florida". You will need to use rvest scrape the data on this single webpage into a dataframe.
-A2.
+**A2** There are a total of 31 judicial districts where the Department of Justice has filed cases against people accused of fraud related to the PPP or EIDL loan program. 
 
 ```{r}
+
+district_url <- "https://www.justice.gov/criminal-fraud/cares-act-fraud"
+
+total_districts <- district_url %>%
+read_html() %>%
+  html_elements('i') %>%
+  html_text()
+
+districts_dataframe <- as.data.frame(total_districts)
 
 ```
 
