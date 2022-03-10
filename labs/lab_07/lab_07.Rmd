@@ -75,7 +75,7 @@ districts_dataframe <- as.data.frame(total_districts)
 ```
 
 Q4. The website (https://www.justice.gov/criminal-fraud/cares-act-fraud) shows that the DOJ filed more cases in the Southern District of Florida than in any other district. One of those cases was filed against someone named "Diamond Blue Smith". Who is Smith, and what was he accused of, according to the criminal complaint? If you were an editor, would you have assigned a reporter to write a story about this case when the complaint was filed in court? Why or why not?
-A4.
+**A4** Smith is a rapper. He was arrested for his “alleged participation in a scheme to file fraudulent loan applications seeking more than $24 million in forgivable Paycheck Protection Program (PPP) loans guaranteed by the Small Business Administration (SBA) under the Coronavirus Aid, Relief, and Economic Security (CARES) Act,” according to the Department of Justice complaint. The Miami Herald reported this information in April 2021. 
 
 Q5. In what percentage of all judicial districts has the U.S. Department of Justice filed cases cases against people accused of fraud related to the PPP or EIDL loan program, according to the DOJ website listing those cases: https://www.justice.gov/criminal-fraud/cares-act-fraud? In answering this question, you should also produce a list of judicial districts where DOJ has NOT filed a case, according to this site.  Note: to answer this question, you will need to scrape a table of all district courts on this up-to-date Wikipedia page under the heading "Active Courts": https://en.wikipedia.org/wiki/List_of_United_States_district_and_territorial_courts  
 A5.
