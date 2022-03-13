@@ -143,4 +143,11 @@ lender_types <- read_csv("tabula-PPP_Report_Public_210531-508.csv", skip=1, col_
 install.packages("tidyverse")
 library(tidyverse)
 setwd("~/Documents/GitHub/data_journalism_2022_spring")
+
+
+all_payouts_decade %>%
+  filter(department == "Police Department" & fiscal_year == 2017) %>%
+  summarise(total = sum(amount))
+
+
 ```
