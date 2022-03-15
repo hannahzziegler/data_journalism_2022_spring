@@ -128,7 +128,7 @@ We can measure this by median household income. That variable is `B19013_001`, s
 ### Task 5: Answer Questions with ACS Data
 
 **Task** Run the following codeblock to find the Maryland county with the highest median household income and put the answer below.
-**Answer**
+**Answer** The Maryland county with the highest median household income is Howard County. 
 
 ```{r}
 md <- get_acs(geography = "county",
@@ -162,10 +162,10 @@ md %>%
 As you can see, some of the error bars are quite wide. Some are narrow. But if the bars overlap, it means the difference between the two counties is within the margin of error, and the differences aren't statistically significant.
 
 Is the difference between Calvert and Montgomery significant?
-**Answer**
+**Answer** Calvert County has a much wider margin of error bar than Montgomery County, but the bars overlap, which shows that the differences between these two counties are not statistically statistically significant. 
 
 Is the difference between Howard and everyone else significant?
-**Answer**
+**Answer** The difference between Howard County and every other county is significant. The Howard County bar does not overlap with the bars for any other county. 
 
 ### Task 7: Joining Multiple Years Together
 
