@@ -115,11 +115,9 @@ county_kids <- get_acs(
   year = 2019
 )
 
-spanish_kids %>% rename(TotalSpanishKids=estimate) -> spanish_kids
-county_kids %>% rename(TotalKids=estimate) -> county_kids
-
 spanish_kids %>%
   inner_join(county_kids, by=c("GEOID", "NAME")) %>%
+  rename(TotalSpanishKids=estimate.x, TotalKids=estimate.y) %>%
   select(-variable.x, -moe.x, -variable.y, -moe.y) %>%
   mutate(percent = ((TotalSpanishKids/TotalKids)*100)) %>%
   arrange(percent)
