@@ -87,9 +87,13 @@ median_age %>%
 ```
 
 **Q2** Which Maryland counties have a median age of at least 50? Write code to isolate just those jurisdictions.
-**A2**
+**A2** Talbot County and Worchester County are the two counties that have a median age of at least 50. 
 
 ```{r}
+
+median_age %>%
+  filter(estimate > 50)
+
 ```
 
 **Q3** Which Maryland counties have the highest percentage of 5-17 year-olds that speak Spanish at home? You'll need one dataframe with county-level data on the number of 5-17 year-olds that speak Spanish at home and a second dataframe with the total population of 5-17 year-olds by county. For each dataframe, rename the `estimate` column to a meaningful name you've given the ACS variable, remove the `variable` columns in each using select and then join them based on GEOID and NAME. Then you can add a column to calculate the percentage of the total 5-17 population that speaks Spanish at home.
