@@ -120,8 +120,7 @@ spanish_kids %>%
   rename(TotalSpanishKids=estimate.x, TotalKids=estimate.y) %>%
   select(-variable.x, -moe.x, -variable.y, -moe.y) %>%
   mutate(percent = ((TotalSpanishKids/TotalKids)*100)) %>%
-  arrange(percent)
-
+  arrange(desc(percent))
 
 ```
 
