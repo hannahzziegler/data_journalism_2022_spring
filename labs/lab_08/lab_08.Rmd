@@ -97,7 +97,7 @@ median_age %>%
 ```
 
 **Q3** Which Maryland counties have the highest percentage of 5-17 year-olds that speak Spanish at home? You'll need one dataframe with county-level data on the number of 5-17 year-olds that speak Spanish at home and a second dataframe with the total population of 5-17 year-olds by county. For each dataframe, rename the `estimate` column to a meaningful name you've given the ACS variable, remove the `variable` columns in each using select and then join them based on GEOID and NAME. Then you can add a column to calculate the percentage of the total 5-17 population that speaks Spanish at home.
-**A3**
+**A3** The counties with the highest percentage of 5-17 year olds that speak Spanish at home are Prince George's, Montgomery, Caroline and Frederick. 
 
 ```{r}
 
@@ -125,7 +125,7 @@ spanish_kids %>%
 ```
 
 **Q4** Given the counties with the largest percentage of 5-17 year-olds that speak Spanish at home, what stands out to you about the data? How would you describe the top 5 counties? How would you describe Garrett County's numbers?
-**A4**
+**A4** I would describe the top 2 counties as the parts of Maryland that are closest to D.C. and the most suburban areas in the state. Frederick County is also relatively suburban. It sticks out to me that Caroline and Talbot County are in the top 5 because they have more rural populations and are located on the eastern shore, and I didn't expect them to be so high on the list since they are so rural. I would say that less than 1% of kids in Garrett County speak Spanish at home. 
 
 **Q5** Which 5-digit zip code had the most removed PPP applications, and what is the percentage of Black population in that zip code according to the ACS? To answer this question, you will need to create separate dataframes with ACS data on total population by zip code and Black population by zip code. In each dataframe, rename the `estimate` column and remove the `variable` column. You'll need to combine the two dataframes in order to calculate the percentage, and then you can combine it with the PPP data. Remember: the PPP data may not have only 5-digit zip codes!
 **A5**
