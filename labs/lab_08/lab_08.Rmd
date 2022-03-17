@@ -128,7 +128,7 @@ spanish_kids %>%
 **A4** I would describe the top 2 counties as the parts of Maryland that are closest to D.C. and the most suburban areas in the state. Frederick County is also relatively suburban. It sticks out to me that Caroline and Talbot County are in the top 5 because they have more rural populations and are located on the eastern shore, and I didn't expect them to be so high on the list since they are so rural. I would say that less than 1% of kids in Garrett County speak Spanish at home. 
 
 **Q5** Which 5-digit zip code had the most removed PPP applications, and what is the percentage of Black population in that zip code according to the ACS? To answer this question, you will need to create separate dataframes with ACS data on total population by zip code and Black population by zip code. In each dataframe, rename the `estimate` column and remove the `variable` column. You'll need to combine the two dataframes in order to calculate the percentage, and then you can combine it with the PPP data. Remember: the PPP data may not have only 5-digit zip codes!
-**A5**
+**A5** The 5-digit zip code with the most removed PPP applications is 30349 and the percentage of Black population within that zip code is roughly 91%. 
 
 ```{r}
 
