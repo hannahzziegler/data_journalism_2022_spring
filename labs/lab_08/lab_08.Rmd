@@ -70,9 +70,20 @@ ppp_removed_july <- read_rds("data/lab_08.rds")
 ## Answer questions
 
 **Q1** What is the Maryland jurisdiction with the lowest median age, according to the ACS 2019 5-year estimates? You will need to find the variable for median age first in your list of ACS variables.
-**A1**
+**A1** The Maryland jurisdiction with the lowest median age is Baltimore City. 
 
 ```{r}
+
+median_age <- get_acs(
+  geography = "county", 
+  variables = c(medage = "B01002_001"),
+  state = "MD",
+  year = 2019
+)
+
+median_age %>%
+  arrange(estimate)
+
 ```
 
 **Q2** Which Maryland counties have a median age of at least 50? Write code to isolate just those jurisdictions.
