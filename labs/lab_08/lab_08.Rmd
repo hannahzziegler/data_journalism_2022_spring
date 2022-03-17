@@ -146,12 +146,25 @@ black_population_by_zip <-
   year = 2019
 )
 
-total_zip_population %>%
-  inner_join(black_population_by_zip, by=c("GEOID")) %>%
+total_combined <- total_zip_population %>%
+  inner_join(black_population_by_zip, by=c("GEOID", "NAME")) %>%
   rename(BlackPopulation=estimate.y, TotalPopulation=estimate.x) %>%
   select(-variable.x, -moe.x, -variable.y, -moe.y) %>%
   mutate(percent = ((BlackPopulation/TotalPopulation)*100)) %>%
   arrange(desc(percent))
+
+ppp_removed_july %>%
+  mutate(zip = str_sub(zip, 1, 5))
+
+everything_combined <- total_combined %>%
+  rename(zip=GEOID) %>%
+  inner_join(ppp_removed_july, by=c("zip"))
+
+everything_combined %>%
+  group_by(zip, percent) %>%
+  summarize(
+  count_loans = n()) %>%
+  arrange(desc(count_loans))
 
 ```
 
