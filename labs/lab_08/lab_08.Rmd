@@ -92,7 +92,7 @@ median_age %>%
 ```{r}
 
 median_age %>%
-  filter(estimate > 50)
+  filter(estimate >= 50)
 
 ```
 
