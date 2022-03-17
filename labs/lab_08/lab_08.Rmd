@@ -131,6 +131,28 @@ spanish_kids %>%
 **A5**
 
 ```{r}
+
+total_zip_population <-
+  get_acs(
+  geography = "zcta", 
+  variables = c(name = "B02001_001"),
+  year = 2019
+)
+  
+black_population_by_zip <-
+  get_acs(
+  geography = "zcta", 
+  variables = c(name = "B02001_003"),
+  year = 2019
+)
+
+total_zip_population %>%
+  inner_join(black_population_by_zip, by=c("GEOID")) %>%
+  rename(BlackPopulation=estimate.y, TotalPopulation=estimate.x) %>%
+  select(-variable.x, -moe.x, -variable.y, -moe.y) %>%
+  mutate(percent = ((BlackPopulation/TotalPopulation)*100)) %>%
+  arrange(desc(percent))
+
 ```
 
 **Q6** How would you describe to an editor the top 10 zip codes with the most removed applications in terms of Black population? Where are they located, and what do they have in common? Are there any zip codes that seem different, and if so why?
