@@ -118,6 +118,13 @@ county_kids <- get_acs(
 spanish_kids %>% rename(TotalSpanishKids=estimate) -> spanish_kids
 county_kids %>% rename(TotalKids=estimate) -> county_kids
 
+spanish_kids %>%
+  inner_join(county_kids, by=c("GEOID", "NAME")) %>%
+  select(-variable.x, -moe.x, -variable.y, -moe.y) %>%
+  mutate(percent = ((TotalSpanishKids/TotalKids)*100)) %>%
+  arrange(percent)
+
+
 ```
 
 **Q4** Given the counties with the largest percentage of 5-17 year-olds that speak Spanish at home, what stands out to you about the data? How would you describe the top 5 counties? How would you describe Garrett County's numbers?
