@@ -211,7 +211,7 @@ So, let's create a dataframe with a count of Maryland loans for each date in our
 
 ### Task 12: Run the following code
 **Task** Run the following code. Explain what you see after running the code in the space below. 
-**Answer** The code has a summary of the total loans by the date they was approved. It is not arranged in any particular order. 
+**Answer** The code has a summary of the total loans by the date they were approved. It is not arranged in any particular order. 
 
 ```{r}
 
