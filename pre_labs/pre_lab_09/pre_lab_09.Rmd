@@ -183,7 +183,7 @@ Those axis titles are kind of a mess. Let's change "count" on the x axis to "tot
 
 ### Task 11: Run the following code
 **Task** Run the following code. Explain what you see after running the code in the space below. What has changed from the last codeblock?
-**Answer**
+**Answer** The text has better spacing and a bolded title that describes the graph. The name of the y axis is also not descriptive to the data. 
 
 ```{r}
 maryland_ppp_top_counties %>%
