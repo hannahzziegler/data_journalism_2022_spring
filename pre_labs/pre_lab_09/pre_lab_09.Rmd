@@ -144,7 +144,7 @@ It's kind of like applying CSS to html. Here I'm changing the theme slightly to 
 
 ### Task 8: Run the following code
 **Task** Run the following code. Explain what you see after running the code in the space below. What has changed from the last codeblock?
-**Answer**
+**Answer** Theme minimal adds the white lines that appear at each "count" block and makes the data easier to read. 
 
 ```{r}
 maryland_ppp_top_counties %>%
@@ -171,7 +171,7 @@ And now we'll apply the economist theme from that package with theme_economist()
 
 ### Task 10: Run the following code
 **Task** Run the following code. Explain what you see after running the code in the space below. What has changed from the last version of the chart?
-**Answer**
+**Answer** The code makes this chart appear as if it is in The Economist, with a light blue background, dark grey bars and separate white lines that separate each part of the y axis. 
 ```{r}
 maryland_ppp_top_counties %>%
   ggplot() +
