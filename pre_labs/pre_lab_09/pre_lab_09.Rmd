@@ -50,7 +50,7 @@ First, we'll create a dataframe of those top 10, called maryland_ppp_top_countie
 
 ### Task 3: Create a dataframe of top 10 counties for PPP loans in Maryland
 **Task** Run the following code to create a dataframe of top 10 loans by county in Maryland. In the space below, explain what each step of the code below is doing in English.
-**Answer** The code is grouping the data by the county in which the project took place and then gets the total number of loans for each county. Then it arranges these numbers in descending order and displays the new dataframe with the completed results. 
+**Answer** The code is grouping the data by the county in which the project took place. Then, it gets the total number of loans for each county. Then it arranges these numbers in descending order and displays the new dataframe with the completed results. 
 
 ```{r}
 maryland_ppp_top_counties <- ppp_maryland %>%
@@ -183,7 +183,7 @@ Those axis titles are kind of a mess. Let's change "count" on the x axis to "tot
 
 ### Task 11: Run the following code
 **Task** Run the following code. Explain what you see after running the code in the space below. What has changed from the last codeblock?
-**Answer** The text has better spacing and a bolded title that describes the graph. The name of the y axis is also not descriptive to the data. It also adds a caption that attributes the data somewhere. 
+**Answer** The text has better spacing and a bolded title that describes the graph. The name of the y axis was not descriptive to the data before but now it is easier to read for the audience. It also adds a caption that attributes the data somewhere. 
 
 ```{r}
 maryland_ppp_top_counties %>%
@@ -230,7 +230,7 @@ We'll put the date on the x axis and total loans on the y axis.
 
 ### Task 13: Run the following code
 **Task** Run the following code. Explain what you see after running the code in the space below. 
-**Answer** The code has a line chart with total loans on the y axis and the approval date on the x axis. The date approved values on the x axis are also very spread out. 
+**Answer** The code has a line chart with total loans on the y axis and the approval date on the x axis. The date approved values on the x axis are also very spread out, as are the total loans values, which makes the graph difficult to read. 
 
 ```{r}
 ppp_maryland_loans_by_date %>%
