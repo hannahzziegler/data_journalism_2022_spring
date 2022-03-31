@@ -92,6 +92,11 @@ state_pop <- get_acs(
   year = 2019
 )
 
+combined_ppp_pop <- left_join(total_ppp_state, state_pop, by = c("state" = "NAME"))
+
+combined_ppp_pop %>%
+  select(state, total_ppp_loans, estimate)
+
 ```
 
 **A2.** 
