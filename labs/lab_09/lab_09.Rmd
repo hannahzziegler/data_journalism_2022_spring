@@ -62,7 +62,8 @@ april_wv_loans %>%
   theme(
     axis.text.x = element_text(angle = 45,  hjust=1)
   ) +
-  labs(title = "West Virginia PPP Loans in April 2020")
+  labs(title = "West Virginia PPP Loans in April 2020",
+       caption = "source: SBA PPP loan database")
 
 ```
 
@@ -75,6 +76,23 @@ april_wv_loans %>%
 * Use the tidycensus API to get a table of total population by state from the American Community Survey (ACS). To do this, you'll use use the alphanumeric variable for total population, which has the following "label" and "concept": "Estimate!!Total:" and "SEX BY AGE".  
 * Use ggplot to make a horizontal bar chart that shows the top 10 states, with the length of the bar determined by the state's total PPP loans per 100,000 people. Give it an appropriate title, source, and x and y axis titles. 
 * Make the bars on the chart blue! I didn't show you how to do this in the prelab, so do some web sleuthing to figure it out.  
+
+```{r}
+
+total_ppp_state <- read_csv("data/state_ppp_all.csv")
+
+census_api_key("102c0c72d8f8eb880608f9dacb53fdf9100f8ba0")
+
+acs2019 <- load_variables(2019, "acs5", cache = TRUE)
+View(acs2019)
+
+state_pop <- get_acs(
+  geography = "state", 
+  variables = c(state_pop = "B01001_001"),
+  year = 2019
+)
+
+```
 
 **A2.** 
 
