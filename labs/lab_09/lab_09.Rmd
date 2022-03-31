@@ -21,6 +21,8 @@ knitr::opts_chunk$set(echo = TRUE)
 options(scipen=999)
 library(tidyverse)
 library(tidycensus)
+install.packages("ggrepel")
+library(ggrepel)
 ```
 
 ## Questions
@@ -55,6 +57,7 @@ april_wv_loans %>%
   ggplot(aes(x=date_approved, y=total_loans)) + 
   geom_line() +
   geom_point() +
+  geom_text_repel(aes(label = total_loans)) +
   scale_x_date(date_breaks = "1 day", date_labels = "%m-%d-%y") +
   theme(
     axis.text.x = element_text(angle = 45,  hjust=1)
