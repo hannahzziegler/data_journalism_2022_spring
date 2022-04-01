@@ -80,6 +80,11 @@ april_wv_loans %>%
 ```{r}
 
 total_ppp_state <- read_csv("data/state_ppp_all.csv")
+total_ppp_state %>%
+  mutate(
+    case_when()
+    "S Dakota" = "South Dakota", "N Dakota" = "North Dakota")
+  
 
 census_api_key("102c0c72d8f8eb880608f9dacb53fdf9100f8ba0")
 
