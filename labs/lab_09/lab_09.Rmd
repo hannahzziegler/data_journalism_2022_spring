@@ -139,9 +139,9 @@ Our questions include: Were there a lot of people who had their loans fully forg
 
 To answer those questions, make a codeblock and do the following:
 
-1. Start with the a subset of the WV ppp loan data we loaded earlier. **DONE**
-2. Filter the data to examine only those loans less than $25,000. **DONE**
-3. There are a bunch of NAs in the forgiveness amount column, for the purposes of this assignment only, let's assume those are actually supposed to be 0. So make all the NAs 0. **DONE**
+1. Start with the a subset of the WV ppp loan data we loaded earlier.
+2. Filter the data to examine only those loans less than $25,000.
+3. There are a bunch of NAs in the forgiveness amount column, for the purposes of this assignment only, let's assume those are actually supposed to be 0. So make all the NAs 0.
 4. Make a scatterplot. I didn't show you how to do this, so look it up! 
 5. In the answer space below, describe what you see and answer the questions posed above.  In a general sense, what do you think this means?  
 
