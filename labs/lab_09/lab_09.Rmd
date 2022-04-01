@@ -160,7 +160,13 @@ scatterplot_wv <- wv_clean_ppp %>%
 
 scatterplot_wv %>%
   ggplot(aes(x=forgiveness_amount, y=amount)) + 
-  geom_point(size = .5)
+  geom_point(size = .5) +
+  labs(
+    title="Comparing approved PPP loans to their forgiveness amounts",
+    x = "approved amount",
+    y = "loan forgiveness amount",
+    caption = "source: SBA PPP loan database"
+  )
 
 ```
 
