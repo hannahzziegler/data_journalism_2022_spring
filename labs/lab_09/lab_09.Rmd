@@ -80,11 +80,15 @@ april_wv_loans %>%
 ```{r}
 
 total_ppp_state <- read_csv("data/state_ppp_all.csv")
-total_ppp_state %>%
+
+clean_states <- total_ppp_state %>%
   mutate(
-    case_when()
-    "S Dakota" = "South Dakota", "N Dakota" = "North Dakota")
-  
+    state = case_when(
+      state == "S Dakota" ~ 'South Dakota',
+      state == "N Dakota" ~ 'North Dakota',
+      state != "North Dakota | South Dakota" ~ state, 
+    )
+  )
 
 census_api_key("102c0c72d8f8eb880608f9dacb53fdf9100f8ba0")
 
@@ -97,13 +101,29 @@ state_pop <- get_acs(
   year = 2019
 )
 
-combined_ppp_pop <- left_join(total_ppp_state, state_pop, by = c("state" = "NAME"))
+combined_ppp_pop <- left_join(clean_states, state_pop, by = c("state" = "NAME"))
 
 clean_combined_pop <- combined_ppp_pop %>%
   select(state, total_ppp_loans, estimate) %>%
   mutate(loans_per_capita = (total_ppp_loans/estimate)*100000) %>%
   arrange(desc(loans_per_capita))
 
+top_10_per_capita <- clean_combined_pop %>%
+  filter(loans_per_capita > 4450)
+
+top_10_per_capita %>%
+  ggplot() +
+  geom_bar(aes(x=reorder(state, loans_per_capita), weight=loans_per_capita), fill="blue") +
+  labs(
+    title="States with the highest number of PPP loans per capita",
+    x = "state",
+    y = "loans per capita",
+    caption = "source: SBA PPP loan database"
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 45,  hjust=1)
+  )
+  
 
 
 ```
