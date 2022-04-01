@@ -107,12 +107,10 @@ combined_ppp_pop <- left_join(clean_states, state_pop, by = c("state" = "NAME"))
 clean_combined_pop <- combined_ppp_pop %>%
   select(state, total_ppp_loans, estimate) %>%
   mutate(loans_per_capita = (total_ppp_loans/estimate)*100000) %>%
-  arrange(desc(loans_per_capita))
+  arrange(desc(loans_per_capita)) %>%
+  head(10)
 
-top_10_per_capita <- clean_combined_pop %>%
-  filter(loans_per_capita > 4450)
-
-top_10_per_capita %>%
+clean_combined_pop %>%
   ggplot() +
   geom_bar(aes(x=reorder(state, loans_per_capita), weight=loans_per_capita), fill="blue") +
   labs(
@@ -121,9 +119,7 @@ top_10_per_capita %>%
     y = "loans per capita",
     caption = "source: SBA PPP loan database"
   ) +
-  theme(
-    axis.text.x = element_text(angle = 45,  hjust=1)
-  )
+  coord_flip()
 
 ```
 
@@ -159,7 +155,7 @@ scatterplot_wv <- wv_clean_ppp %>%
   )
 
 scatterplot_wv %>%
-  ggplot(aes(x=forgiveness_amount, y=amount)) + 
+  ggplot(aes(x=amount, y=forgiveness_amount)) + 
   geom_point(size = .5) +
   labs(
     title="Comparing approved PPP loans to their forgiveness amounts",
