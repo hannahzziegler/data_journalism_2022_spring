@@ -115,7 +115,7 @@ top_10_per_capita %>%
   ggplot() +
   geom_bar(aes(x=reorder(state, loans_per_capita), weight=loans_per_capita), fill="blue") +
   labs(
-    title="States with the highest number of PPP loans per capita",
+    title="Top 10 states with the most PPP loans per capita",
     x = "state",
     y = "loans per capita",
     caption = "source: SBA PPP loan database"
@@ -123,12 +123,10 @@ top_10_per_capita %>%
   theme(
     axis.text.x = element_text(angle = 45,  hjust=1)
   )
-  
-
 
 ```
 
-**A2.** 
+**A2.** The top 10 states with the most PPP loans per capita are Montana, Mississippi, Florida, Louisiana, Illinois, Iowa, Georgia, Nebraska, North Dakota and South Dakota. 
 
 **Q3.**  A scatterplot is a type of chart that helps us see relationships between two variables. One variable goes on the x axis, the other on the y axis.  For each row/observation in our data, a scatterplot puts a circle (or a "point") where the two variables intersect on a grid. 
 
