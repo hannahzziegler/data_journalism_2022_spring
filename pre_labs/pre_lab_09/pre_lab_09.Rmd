@@ -196,7 +196,6 @@ maryland_ppp_top_counties %>%
     x = "total loans",
     y = "county",
     caption = "source: SBA PPP loan database"
-    
   )
 ```
 Viola.  Not super pretty, but good enough to show an editor to help them understand the conclusions you reached with your data analysis. 
