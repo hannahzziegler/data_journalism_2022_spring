@@ -43,6 +43,7 @@ You MUST do the following things when answering this question:
   * one with a total number of applications per state where the undisbursed amount is more than 0.
 * Join those dataframes, specifying the join column, and rename the totals columns so that they better describe the values in them.
 * Export the top 10 states (in terms of total number of applications) to a CSV file using `write_csv`
+
 * Using the top 10 states, make a bar chart with Datawrapper. What kind of bar chart is up to you, so experiment with a few kinds of bar charts to see what answers the question above in the clearest way. Your chart MUST:
   * Have a title, description and source that tells readers about the data. The title and description should highlight the most newsworthy or important aspect.
   * Easily readable labels and values
@@ -71,6 +72,12 @@ barber_undispersed <- barber_shops %>%
 all_barber_stats <- barber_state_apps %>%
   left_join(barber_undispersed, by=c('state')) %>%
   rename(total_loans=count.x, total_undisbursed=count.y) 
+
+top_10_barbers <- all_barber_stats %>%
+  arrange(desc(total_loans)) %>%
+  head(10)
+
+write_csv(top_10_barbers, "data/top_10_barbers.csv")
 
 ```
 
