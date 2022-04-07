@@ -79,13 +79,11 @@ write_csv(top_10_barbers, "data/top_10_barbers.csv")
 
 ```
 
-Which state has the most PPP applications from barber shops, and how many of those have undisbursed amounts greater than $0? Which state has the most undisbursed applications?
-
-**A1.** The state with the most PPP applications from barber shops is Illinois. There are 1,713 loans to barber shops that are undisbursed in the state. Illinois had the most undisbursed applications. Link to visualization: https://datawrapper.dwcdn.net/MpUIN/1/. 
+**A1.** The state with the most PPP applications from barber shops is Illinois. There are 1,713 loans to barber shops that are undisbursed in the state. Illinois had the most undisbursed applications. Link to visualization: https://datawrapper.dwcdn.net/MpUIN/2/.
 
 **Q2.** Using Datawrapper, make a different (ideally better) version of the chart you made above. TO BE CLEAR: this new graphic should show information about states and loans with undisbursed amounts, so don't, for example, focus on a single state. To do this, you MUST go back in R and do any calculations or add additional data to make the chart more effective or answer the above question in a different way. Your chart MUST be different in that it cannot be a bar chart showing the counts of total and undisbursed applications by state. It could be a bar chart showing another calculation or metric, or a scatterplot, or some other form. Follow the same general guidelines as above for the chart's visual elements, and publish it and including the URL below, along with an explanation of how this chart is different from the first one and how you decided what to do.
 
-**A2.** Link to 
+**A2.** Link to new graph: https://datawrapper.dwcdn.net/lm714/1/. 
 
 ```{r}
 
