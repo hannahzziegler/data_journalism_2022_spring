@@ -83,7 +83,8 @@ write_csv(top_10_barbers, "data/top_10_barbers.csv")
 
 **Q2.** Using Datawrapper, make a different (ideally better) version of the chart you made above. TO BE CLEAR: this new graphic should show information about states and loans with undisbursed amounts, so don't, for example, focus on a single state. To do this, you MUST go back in R and do any calculations or add additional data to make the chart more effective or answer the above question in a different way. Your chart MUST be different in that it cannot be a bar chart showing the counts of total and undisbursed applications by state. It could be a bar chart showing another calculation or metric, or a scatterplot, or some other form. Follow the same general guidelines as above for the chart's visual elements, and publish it and including the URL below, along with an explanation of how this chart is different from the first one and how you decided what to do.
 
-**A2.** Link to new graph: https://datawrapper.dwcdn.net/lm714/1/. 
+**A2.** This graph displays a slightly different variation of the data we used in question 1. Instead of showing the number of undisbursed loans, the chart shows the percentage of the total number of loans issued to barber shops in the state were undisbursed. I decided to do this because it showed a more clear metric that displayed how many loans were not disbursed based on the original number of loans approved. This table showed that the majority of states had more than 10 percent of their PPP loans issued to barbers undisbursed. 
+Link to new graph: https://datawrapper.dwcdn.net/lm714/1/. 
 
 ```{r}
 
