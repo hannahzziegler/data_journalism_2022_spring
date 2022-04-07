@@ -53,8 +53,6 @@ You MUST do the following things when answering this question:
 * Put the answer below along with the URL of your chart.
 
 ```{r}
-library(tidyverse)
-library(tidycensus)
 
 barber_state_apps <- barber_shops  %>%
   group_by(state) %>%
@@ -81,11 +79,27 @@ write_csv(top_10_barbers, "data/top_10_barbers.csv")
 
 ```
 
-**A1.**
+Which state has the most PPP applications from barber shops, and how many of those have undisbursed amounts greater than $0? Which state has the most undisbursed applications?
+
+**A1.** The state with the most PPP applications from barber shops is Illinois. There are 1,713 loans to barber shops that are undisbursed in the state. Illinois had the most undisbursed applications. Link to visualization: https://datawrapper.dwcdn.net/MpUIN/1/. 
 
 **Q2.** Using Datawrapper, make a different (ideally better) version of the chart you made above. TO BE CLEAR: this new graphic should show information about states and loans with undisbursed amounts, so don't, for example, focus on a single state. To do this, you MUST go back in R and do any calculations or add additional data to make the chart more effective or answer the above question in a different way. Your chart MUST be different in that it cannot be a bar chart showing the counts of total and undisbursed applications by state. It could be a bar chart showing another calculation or metric, or a scatterplot, or some other form. Follow the same general guidelines as above for the chart's visual elements, and publish it and including the URL below, along with an explanation of how this chart is different from the first one and how you decided what to do.
 
-**A2.**
+**A2.** Link to 
+
+```{r}
+
+barber_states_percent <- all_barber_stats %>%
+  mutate(
+    percent = (total_undisbursed/total_loans)*100
+  ) %>%
+  arrange(desc(percent)) %>%
+  select(state, total_loans, percent) %>%
+  head(30)
+
+write_csv(barber_states_percent, "data/final_barber.csv")
+
+```
 
 **Q3.** The online lender Kabbage, Inc. is featured in the [ProPublica PPP fake farms story](https://www.propublica.org/article/ppp-farms). To show where Kabbage was lending money, make a county-level map that shows the percentage of loans in each county that were Kabbage loans. To do this, make a codeblock and do the following:
 
