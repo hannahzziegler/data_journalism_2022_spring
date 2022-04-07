@@ -26,6 +26,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 library(tidycensus)
+library(dplyr)
 
 barber_shops <- read_csv("data/barber_shops_ppp.csv")
 
@@ -66,6 +67,10 @@ barber_undispersed <- barber_shops %>%
   group_by(state) %>%
   summarize(count=n()) %>%
   arrange(desc(count))
+
+all_barber_stats <- barber_state_apps %>%
+  left_join(barber_undispersed, by=c('state')) %>%
+  rename(total_loans=count.x, total_undisbursed=count.y) 
 
 ```
 
