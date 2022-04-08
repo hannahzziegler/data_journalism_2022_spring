@@ -107,6 +107,8 @@ write_csv(barber_states_percent, "data/final_barber.csv")
 3. Calculate the percentage of loans in each county that were Kabbage loans and save the output to the existing dataframe.
 4. Load the `county_fips.csv` file in the data folder into a dataframe.
 5. Join the combined counties data with the fips data, again specifying the join columns and saving it to a new dataframe.
+
+
 6. Export the new dataframe to a CSV file.
 7. Make a county-level map using that exported CSV file that displays the percentage of Kabbage loans. Style it so that the tooltip displays the county and the percentage, and format all percentages shown on the map so that they appear with one decimal point (such as 3.4%). Follow the same general guidelines as above for the chart's visual elements, and give the map a title, description and source. Provide a legend caption and format the percentage in the same way as on the tooltips.
 8. In the answer space below, provide the URL for your published map and then describe where Kabbage loans are and are not found. Where are they more common? Look specifically at Florida in the data: are there counties on the map where no data is displayed? Why?
@@ -129,8 +131,8 @@ county_fips <- read.csv("data/county_fips.csv")
 fips_join <- joined_kabbage %>%
   left_join(county_fips, by=c('project_county_name' = 'match_county'))
 
-write_csv(fips_join, "data/counties_with_fips")
+write_csv(fips_join, "data/counties_with_fips.csv")
 
 ```
 
-**A3.**  
+**A3.** Link to map: https://datawrapper.dwcdn.net/m0232/1/. Kabbage loans are most concentrated in Florida and around the southeast United States. In Florida, the loans are most concentrated in the southern part of the state, with high percentages in Miami Dade and Palm Beach counties. There are counties on the map where no data is displayed, mostly concentrated on the west coast in California and Nevada. This lender is hardly present along the majority of the west coast and rural middle America. There are not any counties on my map in the state of Florida where there is not any data displayed. In looking at the dataset prior to mapping it, there is at least one loan from Kabbage in each Florida county. 
