@@ -319,7 +319,7 @@ Ultimately, we're going to join this county population table with our beds by co
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer** The code below adds geometry to the md_county_population dataframe so that we can display the counties visually. 
+**Answer** The code below adds geometry to the md_county_population dataframe with census data so that we can display the counties visually in a map.
 
 ```{r}
 
@@ -340,7 +340,7 @@ But there's a problem.  The column in our population data that has county names 
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The code displays the dataframe with the beds per county and the dataframe we just created above that includes the geometry column in the data. 
 
 ```{r}
 
@@ -356,7 +356,7 @@ Let's clean the population table. We're going to rename the "NAME" column to "CO
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** This code cleans the population county so that we can prepare the data to join. It also renames the column that contains the population estimate. The new dataframe as the cleaned values. 
 
 ```{r}
 md_county_population <- md_county_population %>%
@@ -375,7 +375,7 @@ Now we can join them.
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The code below joins the two dataframes to determine the number of hospital beds per capita in the state. There are 24 features and 3 fields present in this dataframe. 
 
 ```{r}
 md_beds_per_100k <- md_county_population %>%
@@ -390,7 +390,7 @@ We have two NAs after we join, for Queen Anne's County and Carolina County.  Tha
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** We converted the NA values to 0 in the data frame using replace_na in the bed totals column. 
 
 ```{r}
 md_beds_per_100k <- md_county_population %>%
@@ -405,7 +405,7 @@ Our final step before visualization, let's calculate the number of beds per 100,
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** This code adds a column to the dataframe that has the beds per 100,000 population to the dataframe we created in previous questions. 
 
 ```{r}
 md_beds_per_100k <- md_county_population %>%
@@ -424,7 +424,7 @@ Okay, now let's visualize.  We're going to build a choropleth map, with the colo
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The code displays a map that has a gradient blue that displays how many hospital beds there are per 100,000 people in each Maryland counties. 
 
 ```{r}
 ggplot() + 
@@ -436,7 +436,7 @@ This map is okay, but the color scale makes it hard to draw fine-grained differe
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** This code chaneges the color scale associated with the map so that it is easier to differentiate between the counties with the most and least hospital beds per capita.
 
 ```{r}
 ggplot() + 
@@ -451,7 +451,7 @@ So let's change the color scale to a "log" scale, which will help us see those d
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below. What patterns do you see?
-**Answer**
+**Answer** The color scale is a log scale, which makes it even more clear that southern Maryland has fewer beds per capita in its countires than in the rest of the state. This new map makes it easier to see fine-grained differences between counties. 
 
 ```{r}
 ggplot() + 
