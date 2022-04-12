@@ -265,7 +265,7 @@ And now let's load the dataframe of hospital information from the previous chapt
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The code below gives the output of the dataframe we saw earlier that has all of the general acute care hospitals in the state of Maryland. But the columns are not sorted into column format like last time, because the format of the file is a .shp. 
 
 ```{r}
 md_hospitals <- st_read("data/Hospitals/Hospitals.shp") %>% 
@@ -282,7 +282,7 @@ Each hospital exists inside of a county, so we're going to first calculate the t
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The code summarizes the output of the total number of hospital beds available in each Maryland county. 
 
 ```{r}
 
@@ -303,7 +303,7 @@ Next, we'll go out and get population data for each county from tidycensus.  The
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** This code gives us the population of each county in the satate of Maryland using our census data and the ACS properties. 
 
 ```{r}
 
@@ -319,7 +319,7 @@ Ultimately, we're going to join this county population table with our beds by co
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The code below adds geometry to the md_county_population dataframe so that we can display the counties visually. 
 
 ```{r}
 
