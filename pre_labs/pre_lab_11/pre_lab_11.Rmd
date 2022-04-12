@@ -63,7 +63,7 @@ Simlar to `readr`, the `sf` library has functions to read geographic data. In th
 
 ### Task: Load data
 **Task** Run the following code to load data. Describe what you see in the answer space below. What columns exist in this data?
-**Answer** There are 33 columns in this data. It reads all of the hospital data. There are columns for the name of the hospital and all of the other important information, such as its address and the type of service it provides. It does not have data for the telephone and state_id columns. 
+**Answer** There are 33 columns in this data. It reads all of the hospital data. There are columns for the name of the hospital and all of the other important information, such as its address and the type of service it provides. It does not have data for the telephone and state_id columns. There is also now a geometry column in this data. 
 
 ```{r}
 hospitals <- st_read("data/Hospitals/Hospitals.shp")
@@ -159,7 +159,7 @@ Now, let's use the counties() function from tigris to pull down a shapefile of a
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer** The data gives us a glimpse of a dataframe that pulls county data for all counties in the U.S. 
+**Answer** The data gives us a glimpse of a dataframe that pulls county data for all counties in the U.S. Instead of the point geometry data type, the new datatype is multipolygon. 
 ```{r}
 
 counties <- counties() 
@@ -177,12 +177,13 @@ This county shapefile has all 3233 U.S. counties.  We only want the Maryland cou
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The output of this code displays the shapefile for only the Maryland counties using the STATEFP column, which is #24 for Maryland. 
 
 ```{r}
 md_counties <- counties %>%
   filter(STATEFP == "24")
 
+view(md_counties)
 ```
 
 To see what this looks like, let's plot it out with ggplot. We can pretty clearly see the shapes of Maryland counties. 
