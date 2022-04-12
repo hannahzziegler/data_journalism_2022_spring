@@ -159,7 +159,7 @@ Now, let's use the counties() function from tigris to pull down a shapefile of a
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The data gives us a glimpse of a dataframe that pulls county data for all counties in the U.S. 
 ```{r}
 
 counties <- counties() 
