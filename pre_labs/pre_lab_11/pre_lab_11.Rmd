@@ -190,7 +190,7 @@ To see what this looks like, let's plot it out with ggplot. We can pretty clearl
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The map displays a map of Maryland and its counties on the same grid of coordinates we used earlier. 
 
 ```{r}
 md_counties %>%
