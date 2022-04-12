@@ -77,7 +77,7 @@ Let's look at just Maryland hospitals. Good news -- `sf` plays very nicely with 
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** It gives the data for all of the hospitals in the dataset that are in Maryland. 
 
 ```{r}
 md_hospitals <- hospitals %>% 
@@ -92,7 +92,7 @@ What kind of hospitals do we have?
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** This summarizes the count of each type of hospital that is present in the dataset. 
 
 ```{r}
 md_hospitals %>%
@@ -107,7 +107,7 @@ Let's narrow our data to only look at the 50 "General Acute Care hospitals."
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** This code shows only hospital in Maryland that are the General Acute Care types. 
 
 ```{r}
 
@@ -125,7 +125,7 @@ We can simply plot them on a longitude-latitude grid using ggplot.
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** This provides us an outline of a map that shows the coordinate of each of the general acute care hospitals. Each of the dots dipicts the coordinate of a general acute care hospital in the state. 
 
 ```{r}
 md_hospitals %>%
@@ -148,10 +148,10 @@ Then load it:
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The code tells us where the downloaded package is and loads the tigris library. 
 
 ```{r}
-# install.packages('tigris')
+install.packages('tigris')
 library(tigris)
 ```
 
