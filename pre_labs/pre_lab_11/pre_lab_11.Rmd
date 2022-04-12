@@ -207,7 +207,7 @@ We're also going to change things up a bit to put the datasets we want to displa
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** This gg plot display takes the map of Maryland counties and overlays the map we made earlier that plotted points where hospitals are present throughout the state. 
 
 ```{r}
 
@@ -226,7 +226,7 @@ We can get a sense of where the largest hospitals are, by changing the color of 
 
 ### Task: Run code
 **Task** Run the following code. Describe the output in the space below.
-**Answer**
+**Answer** The code adds color labels and a key to our map. The colors indicate how many beds are present in each hospital and the key denotes the number range of how many available beds there are. 
 
 ```{r}
 
@@ -249,14 +249,14 @@ First, let's load the libraries we'll need. We're also going to load tidycensus 
 
 ### Task: Load libraries
 **Task** Run the following code. Describe the output in the space below. Be sure to input your census api key.
-**Answer**
+**Answer** The code below loads all of the packages and the associated census API key. 
 
 ```{r}
 library(tidyverse)
 library(sf)
 library(janitor)
 library(tidycensus)
-#census_api_key("549950d36c22ff16455fe196bbbd01d63cfbe6cf")
+census_api_key("549950d36c22ff16455fe196bbbd01d63cfbe6cf")
 
 ```
 
