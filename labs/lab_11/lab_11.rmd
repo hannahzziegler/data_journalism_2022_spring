@@ -23,7 +23,8 @@ library(sf)
 library(janitor)
 library(tigris)
 library(lubridate)
-
+library(tidycensus)
+census_api_key("549950d36c22ff16455fe196bbbd01d63cfbe6cf")
 ```
 
 ## Load data
@@ -53,6 +54,20 @@ wv_mining <- wv_ppp_loans %>%
   mutate(naics_clean = str_sub(naics_code, start=1L, end=2L)) %>%
   filter(naics_clean == 21)
 
+wv_county_population <- get_acs(geography = "county", 
+  variables = c(population = "B01001_001"), 
+  state = "WV",
+  geometry = TRUE)
+
+wv_mining
+
+wv_county_population
+
+wv_county_population <- wv_county_population %>%
+  mutate(NAME = toupper(str_remove_all(NAME,", West Virginia|County"))) %>%
+  mutate(NAME = str_trim(NAME,side="both")) %>%
+  rename(population = estimate) %>%
+  select(NAME, population, geometry)
 ```
 
 **A1.**
