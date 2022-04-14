@@ -73,8 +73,9 @@ wv_county_population_clean <- wv_county_population %>%
 wv_mining_clean <- wv_mining %>%
   group_by(project_county_name) %>%
   summarise(
-    count=n()
-  )
+    count=n(),
+    total = sum(amount)
+  ) 
 
 loans_per_100k <- wv_county_population_clean %>%
   left_join(wv_mining_clean, by=c("COUNTY" = "project_county_name")) %>%
@@ -82,6 +83,10 @@ loans_per_100k <- wv_county_population_clean %>%
   mutate(loans_per_100k = replace_na(loans_per_100k,0)) %>%
   arrange(desc(loans_per_100k)) 
 
+  ggplot() + 
+  geom_sf(data=loans_per_100k, aes(fill=loans_per_100k)) + 
+  theme_minimal() +
+  scale_fill_viridis_b(option="magma",trans = "log") 
 
 ```
 
