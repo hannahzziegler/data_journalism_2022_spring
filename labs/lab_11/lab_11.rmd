@@ -63,11 +63,26 @@ wv_mining
 
 wv_county_population
 
-wv_county_population <- wv_county_population %>%
-  mutate(NAME = toupper(str_remove_all(NAME,", West Virginia|County"))) %>%
-  mutate(NAME = str_trim(NAME,side="both")) %>%
+wv_county_population_clean <- wv_county_population %>%
+  rename(COUNTY = NAME) %>%
+  mutate(COUNTY = toupper(str_remove_all(COUNTY,", West Virginia|County"))) %>%
+  mutate(COUNTY = str_trim(COUNTY,side="both")) %>%
   rename(population = estimate) %>%
-  select(NAME, population, geometry)
+  select(COUNTY, population, geometry)
+
+wv_mining_clean <- wv_mining %>%
+  group_by(project_county_name) %>%
+  summarise(
+    count=n()
+  )
+
+loans_per_100k <- wv_county_population_clean %>%
+  left_join(wv_mining_clean, by=c("COUNTY" = "project_county_name")) %>%
+  mutate(loans_per_100k = count/population*100000) %>%
+  mutate(loans_per_100k = replace_na(loans_per_100k,0)) %>%
+  arrange(desc(loans_per_100k)) 
+
+
 ```
 
 **A1.**
