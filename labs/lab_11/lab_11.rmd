@@ -88,9 +88,9 @@ loans_per_100k <- wv_county_population_clean %>%
 Then answer these questions:
 
 * Based on the map, what region of the state appears to have gotten more loans in this industry? What geographic pattern do you notice in the data?
-* Based on the table, what county got the highest total loan amount? What was the total amount per 100K population, the total amount of loans (not population adjusted), how many loans were there, and what's the population?
+* Based on the table, what county got the highest total loan amount (based on 100k population)? What was the total amount per 100K population, the total amount of loans (not population adjusted), how many loans were there, and what's the population?
 
-**A1.** The region of the state that appears to have the highest total loan amount is the southwestern and northwestern parts of the state. There is a geographic pattern in the data that suggests the mining industry is a main source of the western part of the state's economy, while the grey parts of the state that do not have any data are concentrated in the eastern part of the state. The county with the highest total loan amount was Harrison county. The total loan amount per the 100k population in Harrison County was 14607650.03. The total amount of loans was 9919762.98, there were 59 loans, and the population is 67908. Harrison County did not have the highest amount of loans per 100k people, though. Ritchie County, with a population of 9844, nine loans and loan amount per 100k of 77752742.79, took that title. The total amount of loans issued to Ritchie County was 7653980.00. 
+**A1.** The region of the state that appears to have the highest total loan amount is the southwestern and northwestern parts of the state. There is a geographic pattern in the data that suggests the mining industry is a main source of the western part of the state's economy, while the grey parts of the state that do not have any data are concentrated in the eastern part of the state. The county with the highest total loan amount per 100k people was Ritchie county. The total loan amount per the 100k population was 77752742.79. The total amount of loans was 7653980.00, there were 9 loans, and the population is 9844.
 
 **Q2.** You want to understand WHY the spatial pattern you saw above exists.  So you grab a shapefile with the latitude and longitude coordinates of every mine permit in West Virginia from the state Department of Environmental Protection.
 
@@ -151,9 +151,19 @@ ggplot() +
 
 **Q4.** Starting from the original WV ppp dataframe, examine the loans to companies in "Mining, Quarrying, and Oil and Gas Extraction" in the county with the highest total loan amount per 100K (you can use the table you created in question 1 to identify the top county).
 
+```{r}
+
+ritchie_loans <- wv_ppp_loans %>%
+  mutate(naics_clean = str_sub(naics_code, start=1L, end=2L)) %>%
+  filter(naics_clean == 21) %>%
+  filter(project_county_name == "RITCHIE") %>%
+  arrange(desc(amount))
+
+```
+
 * What single company accounts for the biggest chunk of the total loan amount?
 * What specific industry are they in, based on their 6-digit NAICS code? Look them up on the web. What services do they provide?
 * How many jobs did they save, according to the data?
 * What's your hypothesis for why a company in their specific industry would need to seek a PPP loan during the pandemic?
 
-**A4.**
+**A4.** Hall Drilling LLC is the company that accounts for the biggest chunk of the total loan amount. Their NAICS code is for the drilling oil and gas wells sub-industry and it lists the description as "support activities for mining" on Open Corporates. The loan amount is 6866600 and the data says that the loan saved 387 jobs. Online, this company's website says that it is "one of the most respected oil & gas companies in the Appalachian Basin with over 300 skilled industry employees." Hall Drilling, LLC has 15 total employees across all of its locations and generates $6.46 million in sales and describes it as a "support activity for mining."
