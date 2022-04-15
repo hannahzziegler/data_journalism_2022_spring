@@ -147,7 +147,7 @@ ggplot() +
 
 ```
 
-**A3.**
+**A3.** There is only one mine that is in the county with the highest loan amount per 100k people. The majority of the mines in the state are located where the moderate to high loan amounts were allocated, which is mainly in the southwestern part of the state. This map makes me wonder why such a high amount of PPP loans that were allocated to mining in the state were allocated to a county with no mines and how the general mining industry in the state operates. 
 
 **Q4.** Starting from the original WV ppp dataframe, examine the loans to companies in "Mining, Quarrying, and Oil and Gas Extraction" in the county with the highest total loan amount per 100K (you can use the table you created in question 1 to identify the top county).
 
@@ -157,4 +157,3 @@ ggplot() +
 * What's your hypothesis for why a company in their specific industry would need to seek a PPP loan during the pandemic?
 
 **A4.**
--30-
