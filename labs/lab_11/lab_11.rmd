@@ -112,6 +112,25 @@ wv_expirations_clean <- wv_shapefile %>%
   mutate(expiredate = ymd(expiredate)) %>%
   filter(expiredate > "2021-09-1")
 
+wv_expirations_clean %>%
+  ggplot() + 
+  geom_sf() + 
+  theme_minimal()
+
+counties <- counties() 
+
+wv_counties <- counties %>%
+  filter(STATEFP == "54")
+
+wv_counties %>%
+  ggplot() + 
+  geom_sf() + 
+  theme_minimal()
+
+ggplot() + 
+  geom_sf(data=wv_counties) + 
+  geom_sf(data=wv_expirations_clean) +
+  theme_minimal()
 ```
 
 **A2.**
