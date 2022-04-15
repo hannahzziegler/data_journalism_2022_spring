@@ -74,7 +74,7 @@ wv_mining_clean <- wv_mining %>%
 
 loans_per_100k <- wv_county_population_clean %>%
   left_join(wv_mining_clean, by=c("COUNTY" = "project_county_name")) %>%
-  mutate(loans_per_100k = count/population*100000) %>%
+  mutate(loans_per_100k = total/population*100000) %>%
   mutate(loans_per_100k = replace_na(loans_per_100k,0)) %>%
   arrange(desc(loans_per_100k)) 
 
@@ -103,6 +103,16 @@ This data includes both currently operating mines and old ones that have closed.
 Make a map with a point for each one of these mine permits and put a blank map with the outline of West Virginia counties (which you can get from Tigris) behind it.
 
 What spatial pattern do you see? How does it compare to the spatial pattern in the first map you made?
+
+```{r}
+
+wv_shapefile <- st_read("https://tagis.dep.wv.gov/arcgis/rest/services/WVDEP_enterprise/mining_reclamation/MapServer/0/query?where=1%3D1&outFields=*&geometry=&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&f=json")
+
+wv_expirations_clean <- wv_shapefile %>% 
+  mutate(expiredate = ymd(expiredate)) %>%
+  filter(expiredate > "2021-09-1")
+
+```
 
 **A2.**
 
