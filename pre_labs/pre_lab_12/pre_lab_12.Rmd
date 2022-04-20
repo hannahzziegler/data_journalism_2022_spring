@@ -282,7 +282,7 @@ Let's filter out Maryland first and create a line chart:
 
 ### Task 15: Filter on Maryland and create a line chart
 **Task** Run the following code and describe what the resulting chart shows
-**Answer** The resulting chart shows the case total per county per day on a scale of every six months starting in July of 2020. 
+**Answer** The resulting line graph shows the case total per county per day on a scale of every six months starting in July of 2020. 
 
 ```{r}
 maryland <- covid %>% filter(state == "Maryland")
@@ -294,7 +294,7 @@ The colors can be a little hard to make out, but when you have counties with a l
 
 ### Task 16: Switch the line chart to use a log scale
 **Task** Run the following code and describe what the resulting chart shows
-**Answer**
+**Answer** The chart shows the same data but with a log scale and using scientific notation to display the number of cases. This graph makes it seem like the pandemic was much worst from the start of July 2020. 
 
 ```{r}
 ggplot() + geom_line(data=maryland, aes(x=date, y=cases, group=county, color=county)) + scale_y_continuous(trans="log10")
@@ -310,7 +310,7 @@ I'm adding one piece to the end to make joining this to a map easier and just re
 
 ### Task 17: Find the latest data for Maryland and join it to a shapefile of U.S. counties
 **Task** Run the following code. How many rows in the counties dataframe?
-**Answer**
+**Answer** There are 3233 rows in the dataframe and 9 columns. 
 
 ```{r}
 current <- maryland %>% summarize(max(date))
@@ -323,7 +323,7 @@ Since we have every county in the United States in our counties map layer, we ca
 
 ### Task 18: Filter our data to just Maryland
 **Task** Run the following code. How many rows in the mdcounties dataframe?
-**Answer**
+**Answer** The code below filters to find only the data for counties in Maryland.
 
 ```{r}
 mdcounties <- counties %>% filter(STATEFP == 24)
@@ -333,7 +333,7 @@ So now, we have a geographic dataframe that has both the county shapes and the n
 
 ### Task 19: Make a map
 **Task** Run the following code and describe what the map is showing.
-**Answer**
+**Answer** The map appears to show the cumulative cases of COVID-19 in the entire state county-by-county. The lighter the color displayed on the map, the more cases that county has experienced. 
 
 ```{r}
 ggplot() +
