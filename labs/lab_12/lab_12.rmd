@@ -21,6 +21,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 # Turn off scientific notation
 options(scipen=999)
+library(tidycensus)
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(ggrepel)
+library(sf)
 ```
 
 ## Questions
@@ -41,6 +47,18 @@ Put your sentence in the answer below, along with one other question you could a
 **A1.**
 
 ```{r}
+
+crime_logs_wv <- read_csv("https://raw.githubusercontent.com/dwillis/wvu-projects/master/crime-log/crime_log.csv") %>%
+  clean_names() %>%
+  mutate(new_date = mdy_hm(datetime)) %>%
+  mutate(date = date(new_date)) %>%
+  mutate(hour = hour(new_date)) %>%
+  mutate(weekday = wday(new_date)) %>%
+  arrange(desc(new_date))
+
+most_recent_date <- crime_logs_wv %>%
+  slice(1)
+
 ```
 
 **Q2.** Maryland produces a [CSV file](https://raw.githubusercontent.com/state-of-maryland/VaccineCSVs/master/Vax_ZIP_CODE_FirstSecondSingle_Totals_Raw.csv) showing the total number of vaccinations by zip code and -- interestingly -- it includes non-Maryland zip codes (as well as some zip codes that seem to be bad data). write a script that reads the CSV file, making the columns more readable and adding today's date. Then output the top 25 Maryland zip codes and top 25 non-Maryland zip codes based on number of people fully vaccinated, and write both dataframes out to CSV files, using the following name formats:
