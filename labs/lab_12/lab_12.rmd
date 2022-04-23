@@ -57,7 +57,17 @@ crime_logs_wv <- read_csv("https://raw.githubusercontent.com/dwillis/wvu-project
   arrange(desc(new_date))
 
 most_recent_date <- crime_logs_wv %>%
-  slice(1)
+  filter(date == "2022-04-21")
+
+last_thirty_days <- crime_logs_wv %>%
+  filter(date > "2022-03-21") %>%
+  filter(title == "ASSIST POLICE POLICE")
+
+last_thirty_days %>%
+  group_by(title)
+  summarise(
+    count = n()
+  )
 
 ```
 
