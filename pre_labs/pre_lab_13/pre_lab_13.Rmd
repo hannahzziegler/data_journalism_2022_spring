@@ -62,7 +62,7 @@ Let's start by plotting them to get a sense of the pattern.
 
 ### Task 3: Plot data
 **Task** Run the following code. Describe the plot. What do you see?
-**Answer**
+**Answer** The plot shows a weaker positive regression line, but the points are not aligned in a very linear way. The line suggests that there is some form of relationship between the businesses receiving PPP loans and the percent of the population that voted for Trump. 
 ```{r}
 
 reveal_data %>%
