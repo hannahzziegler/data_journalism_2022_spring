@@ -102,7 +102,7 @@ We can calculate r with a function from the corrr package called "correlate()". 
 
 ### Task 5: Correlate data
 **Task** Run the following code. Describe the table output. What do you see?
-**Answer**
+**Answer** The table outputs a .52 correlation between businesses receiving PPP loans and the percentage of their population that voted for Trump. The table also shows a weak .22 correlation between the PPP loan amount per employee and how much of the population voted for Trump. 
 ```{r}
 reveal_data %>%
   select(-state_name, -vote_2016) %>%
