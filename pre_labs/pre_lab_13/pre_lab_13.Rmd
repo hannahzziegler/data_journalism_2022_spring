@@ -160,7 +160,7 @@ We could just calculate the averages like we're used to doing.
 
 ### Task 8: Average data
 **Task** Run the following code. Describe the table. What do you see?
-**Answer** 
+**Answer** The code displays a table with the average PPP loan amount per employee and the mean percent of businesses receiving PPP loans in a comparison of Clinton and Trump voters in 2016. 
 ```{r}
 reveal_data %>%
   group_by(vote_2016) %>%
