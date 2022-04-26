@@ -93,7 +93,7 @@ Google the top 2-3 zip codes from both Maryland and non-Maryland results and des
 
 ```{r}
 
-
+zip_code_vax <- read_csv("https://raw.githubusercontent.com/state-of-maryland/VaccineCSVs/master/Vax_ZIP_CODE_FirstSecondSingle_Totals_Raw.csv")
 
 ```
 
