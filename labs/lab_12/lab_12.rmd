@@ -88,7 +88,7 @@ Where yymmdd is from today's date. You MUST do this programmatically so that it 
 To do that, you will need to:
 
 1. Get rid of rows that do not have data for fully vaccinated people *DONE*
-2. Remove any rows where the zip code is less than five digits (there are several ways you could do this).
+2. Remove any rows where the zip code is less than five digits (there are several ways you could do this). *DONE*
 3. Figure out the "lowest" and "highest" Maryland zip codes.
 
 Google the top 2-3 zip codes from both Maryland and non-Maryland results and describe them in your answer.
@@ -105,6 +105,10 @@ clean_zip_code_vax <- zip_code_vax %>%
   mutate(
     today_date = today(tzone = "")
   )
+
+clean_zip_code_vax %>%
+  mutate(zip = str_sub(zip_code, start=1L, end=5L)) %>%
+  filter(nchar(zip) == 5)
 
 ```
 
