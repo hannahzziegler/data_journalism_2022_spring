@@ -87,7 +87,7 @@ Where yymmdd is from today's date. You MUST do this programmatically so that it 
 
 To do that, you will need to:
 
-1. Get rid of rows that do not have data for fully vaccinated people
+1. Get rid of rows that do not have data for fully vaccinated people *DONE*
 2. Remove any rows where the zip code is less than five digits (there are several ways you could do this).
 3. Figure out the "lowest" and "highest" Maryland zip codes.
 
@@ -99,11 +99,12 @@ Google the top 2-3 zip codes from both Maryland and non-Maryland results and des
 
 zip_code_vax <- read_csv("https://raw.githubusercontent.com/state-of-maryland/VaccineCSVs/master/Vax_ZIP_CODE_FirstSecondSingle_Totals_Raw.csv")
 
-zip_code_vax %>%
+clean_zip_code_vax <- zip_code_vax %>%
+  filter(!is.na(FullyVaccinated)) %>%
   clean_names() %>%
   mutate(
     today_date = today(tzone = "")
-  ) 
+  )
 
 ```
 
