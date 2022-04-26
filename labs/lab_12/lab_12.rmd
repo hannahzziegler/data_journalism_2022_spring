@@ -61,7 +61,7 @@ most_recent_date <- crime_logs_wv %>%
   filter(date == "2022-04-21")
 
 last_thirty_days <- crime_logs_wv %>%
-  filter(date > "2022-03-21") %>%
+  filter(date > "2022-03-26") %>%
   filter(title == "ASSIST POLICE POLICE")
 
 summary_thirty_days <- last_thirty_days %>%
