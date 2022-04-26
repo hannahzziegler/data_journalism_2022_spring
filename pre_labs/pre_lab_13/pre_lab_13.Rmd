@@ -102,15 +102,17 @@ We can calculate r with a function from the corrr package called "correlate()". 
 
 ### Task 5: Correlate data
 **Task** Run the following code. Describe the table output. What do you see?
-**Answer** The table outputs a .52 correlation between businesses receiving PPP loans and the percentage of their population that voted for Trump. The table also shows a weak .22 correlation between the PPP loan amount per employee and how much of the population voted for Trump. 
+**Answer** The table outputs a moderate .52 correlation between businesses receiving PPP loans and the percentage of their population that voted for Trump. The table also shows a weak .22 correlation between the PPP loan amount per employee and how much of the population voted for Trump. 
 ```{r}
+
 reveal_data %>%
   select(-state_name, -vote_2016) %>%
   correlate() %>%
   select(term, pct_trump)
 
 
-#glimpse(reveal_data)
+glimpse(reveal_data)
+
 ```
 The table this function produces generally confirms our interpretation of the two graphs above.  The relationship between a state's pct_trump and ppe_amount_per employee is positive, but at .22 (on a scale of -1 to 1), the relationship isn't particularly strong.  That's why the second graphic above was messier than the first.  
 
@@ -119,7 +121,7 @@ The relationship between businesses in a state receiving ppe and the state's Tru
 
 ### Task 6: Correlate data
 **Task** Run the following code. Describe the model output. What do you see?
-**Answer** The output gives a p value of 0.00008607 at a 95 percent confidence interval. 
+**Answer** The output gives a p value of 0.00008607 at a 95 percent confidence interval. This p value is less than .05, which means that the result is statistically significant.
 ```{r}
 
 cor.test(reveal_data$pct_trump, reveal_data$businesses_receiving_ppe_pct)
@@ -132,7 +134,7 @@ Now let's test the other one, the relationship between the pct_trump and the ppe
 
 ### Task 7: Correlate data
 **Task** Run the following code. Describe the model output. What do you see?
-**Answer** This output gives a p-value of 0.1189, meaning that ____. 
+**Answer** This output gives a p-value of 0.1189 and t value of 1.5872. This p value is greater than .05, which means that it is not statistically significant. 
 ```{r}
 
 cor.test(reveal_data$pct_trump, reveal_data$ppe_amount_per_employee)
