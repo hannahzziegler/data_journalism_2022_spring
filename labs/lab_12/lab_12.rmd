@@ -27,6 +27,7 @@ library(janitor)
 library(lubridate)
 library(ggrepel)
 library(sf)
+library(stringr)
 ```
 
 ## Questions
@@ -44,7 +45,7 @@ Then write code that will construct a paragraph about the data described above c
 
 Put your sentence in the answer below, along with one other question you could ask of this data.
 
-**A1.**
+**A1.** The sentence that I generated is "There have been 3 instances of ASSIST POLICE POLICE  in the last thirty days. The last incident was 2022-04-21". 
 
 ```{r}
 
@@ -66,7 +67,7 @@ last_thirty_days <- crime_logs_wv %>%
 summary_thirty_days <- last_thirty_days %>%
   group_by(title) %>%
   summarise(
-    count = n())
+    count = n()) 
 
 sub <- paste("There have been", format(summary_thirty_days$count), "instances of", format(summary_thirty_days$title), " in the last thirty days. The last incident was", last_thirty_days$date[[1]])
 
