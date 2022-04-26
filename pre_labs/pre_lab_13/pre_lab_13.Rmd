@@ -77,7 +77,7 @@ Let's test another variable, the average amount of money provided by PPP per sma
 
 ### Task 4: Plot data
 **Task** Run the following code. Describe the plot. What do you see?
-**Answer**
+**Answer** The plot has a weaker positive regression line showing the relationship between the amount of PPP loan funding per employee and the percentage of the vote that went to Trump in each state. 
 ```{r}
 
 reveal_data %>%
