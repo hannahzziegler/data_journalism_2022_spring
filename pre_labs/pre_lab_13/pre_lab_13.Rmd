@@ -178,7 +178,7 @@ A t-test can help us answer that question.  It can tell us where there's a stati
 
 ### Task 9: Run t-test
 **Task** Run the following code. Describe the output. What do you see?
-**Answer** , meaning that the t value is low, the p value is pretty high, and there are not a lot of meaningful correlational results from analysis of this data. 
+**Answer** The two sample t-test returns a t value of 1.2223 and a p value of 0.2295. The t value is low, the p value is pretty high, and there are not a lot of meaningful correlational results from analysis of this data. 
 ```{r}
 t.test(ppe_amount_per_employee ~ vote_2016, data = reveal_data)
 ```
@@ -188,7 +188,7 @@ Let's try the percentage of businesses getting ppp loans.
 
 ### Task 10: Run t-test
 **Task** Run the following code. Describe the output. What do you see?
-**Answer**
+**Answer** The t value is much stronger at about 3 and the p value is .002. The p value is less than .05 and t value is high, which means that the results of this analysis could be statistically significant. 
 ```{r}
 t.test(businesses_receiving_ppe_pct ~ vote_2016, data = reveal_data)
 ```
