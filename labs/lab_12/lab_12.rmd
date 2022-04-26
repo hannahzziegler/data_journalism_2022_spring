@@ -106,9 +106,12 @@ clean_zip_code_vax <- zip_code_vax %>%
     today_date = today(tzone = "")
   )
 
-clean_zip_code_vax %>%
+final_clean_zips <- clean_zip_code_vax %>%
   mutate(zip = str_sub(zip_code, start=1L, end=5L)) %>%
   filter(nchar(zip) == 5)
+
+zip_codes_maryland <- final_clean_zips %>%
+  filter(zip >= 20588, zip <= 21930)
 
 ```
 
