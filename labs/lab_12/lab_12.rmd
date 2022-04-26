@@ -111,7 +111,10 @@ final_clean_zips <- clean_zip_code_vax %>%
   filter(nchar(zip) == 5)
 
 zip_codes_maryland <- final_clean_zips %>%
-  filter(zip >= 20588, zip <= 21930)
+  filter(zip >= 20588, zip <= 21930) %>%
+  group_by(fully_vaccinated) %>%
+  arrange(desc(fully_vaccinated)) %>%
+  head(25)
 
 ```
 
