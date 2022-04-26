@@ -117,7 +117,7 @@ zip_codes_maryland <- final_clean_zips %>%
   head(25)
 
 zip_codes_other_states <- final_clean_zips %>%
-  filter(zip < 20588, zip > 21930)
+  filter(zip >= 21929, zip <= 20589)
 
 ```
 
