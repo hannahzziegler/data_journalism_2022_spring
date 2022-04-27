@@ -128,7 +128,15 @@ write_csv(zip_codes_other_states, file = paste0('non_maryland_zips_', Sys.Date()
 
 ```
 
-**Q3.** Maryland has had one of the more successful vaccination rates, but you want to understand where a significant portion of the population remains less than fully vaccinated. Make a dataframe of all Maryland zip codes from the vaccination data you used in Q2 and join it to Maryland zip code population data from the Census API. Calculate the percentage of fully vaccinated for each zip code and then make a map showing the zip codes with less than 50 percent fully vaccinated. Put a blank map with the outline of Maryland counties (which you can get from Tigris) behind it for context. Add a label to the map describing what the data is and include the date from the vaccination data (programmatically, so you can run it every day).
+**Q3.** Maryland has had one of the more successful vaccination rates, but you want to understand where a significant portion of the population remains less than fully vaccinated. 
+
+Make a dataframe of all Maryland zip codes from the vaccination data you used in Q2 and join it to Maryland zip code population data from the Census API. *DONE*
+
+Calculate the percentage of fully vaccinated for each zip code.
+
+Then make a map showing the zip codes with less than 50 percent fully vaccinated. 
+
+Put a blank map with the outline of Maryland counties (which you can get from Tigris) behind it for context. Add a label to the map describing what the data is and include the date from the vaccination data (programmatically, so you can run it every day).
 
 You WILL need to ensure that the columns you use to join the two dataframes are the same datatype and remember that join order matters.
 
@@ -149,7 +157,20 @@ md_pop <- get_acs(
   year = 2019
 )
 
+three_zip_codes_maryland <- final_clean_zips %>%
+  filter(zip >= 20588, zip <= 21930) %>%
+  group_by(fully_vaccinated) %>%
+  arrange(desc(fully_vaccinated))
+
 combined_vax_zip <- md_pop %>%
-  inner_join(zip_codes_maryland, by=c("GEOID" = "zip"))
+  inner_join(three_zip_codes_maryland, by=c("GEOID" = "zip")) %>%
+  rename(population=estimate)
+
+map_vax <- combined_vax_zip %>%
+  mutate(percent = (fully_vaccinated/population)*100) %>%
+  filter(percent < 50) %>%
+  arrange(desc(percent))
+
+
 
 ```
