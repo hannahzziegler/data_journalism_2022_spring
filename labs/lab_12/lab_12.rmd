@@ -145,7 +145,7 @@ You WILL need to ensure that the columns you use to join the two dataframes are 
 
 Describe the output of the map below, and say what you think the most interesting areas are.
 
-**A3.**
+**A3.** The map outputs ZIP codes that are mostly concentrated in the western part of the state near the border with Pennsylvania and West Virginia. A majority of these ZIP codes have between 30-50% of their populations vaccinated. This makes me wonder if the vaccination rollout in this part of the state is lacking, or if the political orientation of these ZIP codes and counties had a lot to do with people's choices to get vaccinated or not. Nearly every ZIP code that shows up on this map is in a part of the state that is more rural. Something that stands out to me about this map is how there is a chunk of unvaccinated individuals smack dab in the middle of Prince George's County, which is strange because the county overall has a high vaccination rate. The populations where between 40-50 percent of the population are vaccinated are concentrated in rural Maryland, both the western edge and the eastern shore. There are large clusters in Caroline, Dorchester and Cecil counties, all of which are rural areas in the state. 
 
 ```{r}
 
