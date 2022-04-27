@@ -133,13 +133,15 @@ write_csv(zip_codes_other_states, file = paste0('non_maryland_zips_', Sys.Date()
 
 Make a dataframe of all Maryland zip codes from the vaccination data you used in Q2 and join it to Maryland zip code population data from the Census API. *DONE*
 
-Calculate the percentage of fully vaccinated for each zip code.
+Calculate the percentage of fully vaccinated for each zip code. *DONE*
 
-Then make a map showing the zip codes with less than 50 percent fully vaccinated. 
+Then make a map showing the zip codes with less than 50 percent fully vaccinated. *DONE*
 
-Put a blank map with the outline of Maryland counties (which you can get from Tigris) behind it for context. Add a label to the map describing what the data is and include the date from the vaccination data (programmatically, so you can run it every day).
+Put a blank map with the outline of Maryland counties (which you can get from Tigris) behind it for context. *DONE* 
 
-You WILL need to ensure that the columns you use to join the two dataframes are the same datatype and remember that join order matters.
+Add a label to the map describing what the data is and include the date from the vaccination data (programmatically, so you can run it every day). *DONE*
+
+You WILL need to ensure that the columns you use to join the two dataframes are the same datatype and remember that join order matters. *DONE*
 
 Describe the output of the map below, and say what you think the most interesting areas are.
 
