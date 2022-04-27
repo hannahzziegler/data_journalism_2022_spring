@@ -93,7 +93,7 @@ To do that, you will need to:
 
 Google the top 2-3 zip codes from both Maryland and non-Maryland results and describe them in your answer.
 
-**A2.**
+**A2.** The top three ZIP codes in Maryland are located in Silver Spring, Gaithersburg and Germantown. These three locations are all suburban hubs in Montgomery County and very close to one another. It makes me wonder if Montgomery County had a better vaccination rollout than other parts of the state. These three places are also densely populated compared to other areas in the state, which could also account for why these areas have so many vaccinated people. 
 
 ```{r}
 
