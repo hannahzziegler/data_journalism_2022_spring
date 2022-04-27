@@ -89,11 +89,11 @@ To do that, you will need to:
 
 1. Get rid of rows that do not have data for fully vaccinated people *DONE*
 2. Remove any rows where the zip code is less than five digits (there are several ways you could do this). *DONE*
-3. Figure out the "lowest" and "highest" Maryland zip codes.
+3. Figure out the "lowest" and "highest" Maryland zip codes. *DONE*
 
 Google the top 2-3 zip codes from both Maryland and non-Maryland results and describe them in your answer.
 
-**A2.** The top three ZIP codes in Maryland are located in Silver Spring, Gaithersburg and Germantown. These three locations are all suburban hubs in Montgomery County and very close to one another. It makes me wonder if Montgomery County had a better vaccination rollout than other parts of the state. These three places are also densely populated compared to other areas in the state, which could also account for why these areas have so many vaccinated people. 
+**A2.** The top three ZIP codes in Maryland are located in Silver Spring, Gaithersburg and Germantown. These three locations are all suburban hubs in Montgomery County and very close to one another. It makes me wonder if Montgomery County had a better vaccination rollout than other parts of the state. These three places are also densely populated compared to other areas in the state, which could also account for why these areas have so many vaccinated people. The top three ZIP codes outside of Maryland are all located in Washington, D.C. This makes me wonder about how D.C.'s vaccine rollout succeeded so much that its relatively small, yet dense population outnumbers the number of vaccinated people in even bigger cities. 
 
 ```{r}
 
