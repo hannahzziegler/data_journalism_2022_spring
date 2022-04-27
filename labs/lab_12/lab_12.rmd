@@ -28,6 +28,7 @@ library(lubridate)
 library(ggrepel)
 library(sf)
 library(stringr)
+library(tigris)
 ```
 
 ## Questions
@@ -154,7 +155,8 @@ View(acs2019)
 md_pop <- get_acs(
   geography = "zcta", 
   variables = c(name = "B02001_001"),
-  year = 2019
+  year = 2019,
+  geometry = TRUE
 )
 
 three_zip_codes_maryland <- final_clean_zips %>%
@@ -169,8 +171,21 @@ combined_vax_zip <- md_pop %>%
 map_vax <- combined_vax_zip %>%
   mutate(percent = (fully_vaccinated/population)*100) %>%
   filter(percent < 50) %>%
-  arrange(desc(percent))
+  arrange(desc(percent)) %>%
+  select(GEOID, percent)
 
+counties <- counties() 
 
+md_counties <- counties %>%
+  filter(STATEFP == "24")
+  
+md_counties %>%
+  ggplot() + 
+  geom_sf() + 
+  theme_minimal()
+
+ggplot() + 
+  geom_sf(data=map_vax, aes(fill=map_vax)) + 
+  theme_minimal()
 
 ```
