@@ -138,6 +138,18 @@ Describe the output of the map below, and say what you think the most interestin
 
 ```{r}
 
+census_api_key("102c0c72d8f8eb880608f9dacb53fdf9100f8ba0")
 
+acs2019 <- load_variables(2019, "acs5", cache = TRUE)
+View(acs2019)
+
+md_pop <- get_acs(
+  geography = "zcta", 
+  variables = c(name = "B02001_001"),
+  year = 2019
+)
+
+combined_vax_zip <- md_pop %>%
+  inner_join(zip_codes_maryland, by=c("GEOID" = "zip"))
 
 ```
