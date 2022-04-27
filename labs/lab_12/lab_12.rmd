@@ -166,7 +166,8 @@ three_zip_codes_maryland <- final_clean_zips %>%
 
 combined_vax_zip <- md_pop %>%
   inner_join(three_zip_codes_maryland, by=c("GEOID" = "zip")) %>%
-  rename(population=estimate)
+  rename(population=estimate) %>%
+  select(GEOID, population, fully_vaccinated, geometry)
 
 map_vax <- combined_vax_zip %>%
   mutate(percent = (fully_vaccinated/population)*100) %>%
@@ -184,8 +185,11 @@ md_counties %>%
   geom_sf() + 
   theme_minimal()
 
-ggplot() + 
-  geom_sf(data=map_vax, aes(fill=map_vax)) + 
-  theme_minimal()
+ggplot() +
+  geom_sf(data=md_counties) +
+  geom_sf(data=map_vax, aes(fill=percent)) +
+  scale_fill_viridis_c(option = "plasma", trans = "sqrt") +
+  theme_void() +
+  labs(title = paste("Maryland ZIP codes with less than 50 percent of population vaccinated as of ", current[[1]], sep=""))
 
 ```
