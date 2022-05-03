@@ -57,7 +57,7 @@ If you are trying to create a list of unique words, R will treat differences in 
 
 ### Task 4: Trying out unique
 **Task** Run the following code and describe what the `unique` function does to the original list of words.
-**Answer**
+**Answer** The unique function still shows differences in capitalization between dog and Dog, but it does combine the two repeated "cat" words. 
 
 ```{r}
 a_list_of_words <- c("Dog", "dog", "dog", "cat", "cat", ",")
@@ -68,7 +68,7 @@ Fortunately, this is a solved problem with tidytext, which has a function called
 
 ### Task 5: Trying out unnest_tokens
 **Task** Run the following code and describe the output of using the `unnest_tokens` function.
-**Answer**
+**Answer** The new dataframe has two columns of content and changes all of the text to lowercase text and removes all of the punctuation. THere are 5,000,000 unique words in this dataframe. 
 
 ```{r}
 unique_words <- covid_tweets %>% select(content) %>%
