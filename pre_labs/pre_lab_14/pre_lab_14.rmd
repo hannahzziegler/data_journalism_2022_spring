@@ -201,7 +201,7 @@ And we already have a different, more nuanced result. Health was among the top s
 
 ### Task 12: Create a dataframe with the top 10 two-word phrases for 2021
 **Task** Run the following code and describe the results.
-**Answer**
+**Answer** After 2021, phrases like "health care" and "public health" are still among the top 10 two-word phrases. There are many more occurrences of tweets in 2021 that talk about the vaccine, which makes sense because of the development of vaccines during the latter half of 2020 and first part of 2021. 
 
 ```{r}
 covid_tweets %>%
