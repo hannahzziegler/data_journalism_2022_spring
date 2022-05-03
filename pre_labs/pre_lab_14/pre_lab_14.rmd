@@ -78,7 +78,7 @@ View(unique_words)
 
 ### Task 6: Make a column chart
 **Task** Run the following code and describe what the resulting graphic shows. Is it interesting?
-**Answer** The resulting graphic mostly has the most common words, generic in the English language that appear most in the tweets. These words include "the", "to", and "and." This graphic is not super interesting to me. 
+**Answer** The resulting graphic mostly has the most common words, generic in the English language that appear most in the tweets. These words include "the", "to", and "and." This graphic is not super interesting to me, but makes sense because people use generic words like these so much. 
 
 Now we can look at the top words in this dataset. Let's limit ourselves to making a plot of the top 25 words, and we'll use the function `count` to do the counting:
 
@@ -111,7 +111,7 @@ From there, we can get a simple word frequency by just grouping them together an
 
 ### Task 8: Using anti_join
 **Task** Run the following code and describe the results. Is it more interesting than before?
-**Answer**
+**Answer** The code below takes out all of the stop words from our dataframe and we now have a table of the msost common words in these tweets using anti-join. Now, we can see that "covid", "19" and "covid19" are the most common mentions of words in tweets from federal politicians relating to COVID-19. It is more targeted to the topic of the pandemic at hand. 
 
 ```{r}
 unique_words %>%
@@ -143,7 +143,7 @@ Then we can create top 10 lists for both of them and compare:
 
 ### Task 10: Create dataframes with the top 10 words in each year
 **Task** Run the following code and describe the results.
-**Answer**
+**Answer** The two datatables that appear below have many of the same main words that are listed above in the one that isn't divided by year. The 2021 dataframe has words like "vaccine," which are not present in the other dataframe because vaccinations weren't as widely talked about in the earlier days of the pandemic. 2020 also has words like "crisis", while the 2021 datatable doesn't use this harsh language in the tweets from federal politicians. 
 
 ```{r}
 unique_words_2020 %>%
