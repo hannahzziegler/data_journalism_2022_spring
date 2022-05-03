@@ -181,7 +181,7 @@ So this block is is going to do the following:
 
 ### Task 11: Create a dataframe with the top 10 two-word phrases for 2020
 **Task** Run the following code and describe the results.
-**Answer**
+**Answer** The results include percentages of words like "covid 19", "health care" and "public health." We see more phrases associated with the pandemic and its response in this dataframe, especially because the data shows us tweets about "town halls", "covid relief" and "relief package."
 
 ```{r}
 covid_tweets %>%
