@@ -255,7 +255,7 @@ Now we can begin to see some differences between the parties. We also could do t
 
 ### Task 14: Create a dataframe with the top 10 two-word phrases in 2020 and 2021 for Republican House candidates
 **Task** Run the following code and describe the results.
-**Answer**
+**Answer** In 2020, Republican House candidates had a much higher percentage of referencing "president trump", "american people" and "god bless." In 2021, there are more polarizing terms such as "illegial immigrants", "covid positive" and "vaccine mandates." There is also mention of President Biden and less mention of God blessing the American people in 2021. 
 
 ```{r}
 covid_tweets %>%
