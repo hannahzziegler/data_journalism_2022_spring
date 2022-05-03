@@ -78,7 +78,7 @@ View(unique_words)
 
 ### Task 6: Make a column chart
 **Task** Run the following code and describe what the resulting graphic shows. Is it interesting?
-**Answer**
+**Answer** The resulting graphic mostly has the most common words, generic in the English language that appear most in the tweets. These words include "the", "to", and "and." This graphic is not super interesting to me. 
 
 Now we can look at the top words in this dataset. Let's limit ourselves to making a plot of the top 25 words, and we'll use the function `count` to do the counting:
 
