@@ -291,7 +291,7 @@ Another popular use of text analysis is to measure the sentiment of a word - whe
 
 ### Task 15: Load the bing lexicon and produce sentiments for our 2020 and 2021 unique words
 **Task** Run the following code and describe the results. Do any of the sentiments seem incorrect or counter-intuitive?
-**Answer**
+**Answer** Most of the sentiments here seem to describe the words being used accurately when the words are seen as standalones. I would like to know the context where some of these words are used, such as "positive" because this could be referencing a person who has tested positive for COVID, which is obviously a negative thing. 
 
 ```{r}
 bing <- get_sentiments("bing")
